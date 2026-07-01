@@ -1,0 +1,60 @@
+Settings: a11y-project/checklist-a11y-ux-ui
+General
+Access
+Collaborators
+Moderation options
+Code and automation
+Branches
+Tags
+Rules
+Actions
+Webhooks
+Copilot
+Environments
+Codespaces
+Pages
+Security and quality
+Advanced Security
+Deploy keys
+Secrets and variables
+Integrations
+GitHub Apps
+Email notifications
+GitHub Pages
+GitHub Pages is designed to host your personal, organization, or project pages from a GitHub repository.
+Build and deployment
+Source
+Source Deploy from a branch
+Branch
+Your GitHub Pages site is currently being built from the main branch. Learn more about configuring the publishing source for your site.
+main
+/ (root)
+Save
+Learn how to add a Jekyll theme to your site.
+Custom domain
+Custom domain
+Custom domains allow you to serve your site from a domain other than a11y-project.github.io. Learn more about configuring custom domains.
+ 
+SaveRemove
+ 
+ 
+Enforce HTTPS— Required for your site because you are using the default domain (a11y-project.github.io)
+HTTPS provides a layer of encryption that prevents others from snooping on or tampering with traffic to your site.
+When HTTPS is enforced, your site will only be served over HTTPS. Learn more about securing your GitHub Pages site with HTTPS.
+Visibility
+GitHub Enterprise
+With a GitHub Enterprise account, you can restrict access to your GitHub Pages site by publishing it privately. You can use privately published sites to share your internal documentation or knowledge base with members of your enterprise. You can try GitHub Enterprise risk-free for 30 days. Learn more about the visibility of your GitHub Pages site.
+Start free for 30 days
+Footer
+GitHub Homepage
+© 2026 GitHub, Inc.
+Footer navigation
+Terms
+Privacy
+Security
+Status
+Community
+Docs
+Contact
+Manage cookies
+Do not share my personal information
