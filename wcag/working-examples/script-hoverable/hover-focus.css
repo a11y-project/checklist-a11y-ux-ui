@@ -1,0 +1,24 @@
+body {
+    background:#fff;
+    color:#000;
+    font:100% / 1.5 sans-serif;
+}
+
+[role="tooltip"] {
+    display: none;
+    padding: 1.5em;
+    background:white;
+    color: black;
+    border:solid black 2px;
+    width:10em;
+}
+
+.a-and-tooltip {
+  position: relative;
+}
+
+[role="tooltip"] {
+    position: absolute;
+    left:0;
+    top:1em;
+}

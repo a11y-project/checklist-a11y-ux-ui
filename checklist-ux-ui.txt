@@ -1,0 +1,758 @@
+================================================================================
+NOTICE D'ACCESSIBILITÉ FONCTIONNELLE ET GRAPHIQUE — VERSION FUSIONNÉE
+AcceDe Web v4.1.2 + Not-Checklist Intopia — Juillet 2026
+================================================================================
+
+Destinée aux équipes de conception : UX designers, UI designers, chefs de projet.
+Elle liste, en un seul parcours thématique, les règles d'accessibilité à
+respecter lors de la conception de maquettes et de spécifications
+fonctionnelles.
+
+Cette version fusionne deux sources : les notices AcceDe Web (RGAA 4.1.2,
+corrigées et complétées), et une sélection de préconisations de
+l'Accessibility Not-Checklist (Intopia), retraduites et redistribuées dans
+les mêmes thèmes pour éviter tout doublon. Les apports d'Intopia qui
+recoupent une règle existante sont regroupés sous un encart
+« COMPLÉMENT (INTOPIA) » à l'intérieur de cette règle ; ceux qui couvrent un
+angle inédit forment une règle à part entière, marquée [NOUVEAU].
+
+Les thèmes sont classés par fréquence d'usage : des sujets quasi universels
+(couleur, typographie, images, liens...) vers les plus spécifiques
+(tableaux, authentification, cas particuliers).
+
+Légende des marqueurs :
+  [CORRECTIF]  Règle existante modifiée ou complétée
+  [NOUVEAU]    Règle, thème ou angle inexistant dans les versions d'origine
+  (RGAA X.X)   Critère RGAA 4.1.2 correspondant
+  (WCAG X.X.X) Critère WCAG correspondant
+
+================================================================================
+SOMMAIRE
+================================================================================
+
+  1.  Couleurs et contraste
+  2.  Adaptabilité de la mise en page
+  3.  Images et icônes
+  4.  Liens et boutons
+  5.  Structure du contenu
+  6.  Clavier et focus
+  7.  Navigation et repérage
+  8.  Formulaires
+  9.  Interaction pointeur, gestes et mouvement
+  10. Tableaux  [NOUVEAU]
+  11. Contenu audio et vidéo
+  12. Temps, délais et interruptions
+  13. Authentification  [NOUVEAU]
+  14. Bonnes pratiques typographiques et rédactionnelles
+
+================================================================================
+1. COULEURS ET CONTRASTE
+================================================================================
+
+────────────────────────────────────────────────────────────────────────────────
+1.1. La couleur n'est jamais le seul vecteur d'une information ; si utilisée, une alternative visuelle (forme, icône, texte) est prévue et documentée dans les spécifications pour les développeurs.
+────────────────────────────────────────────────────────────────────────────────
+
+  Ressource : Assurer la compréhension de l'information même en l'absence de couleurs | https://www.accede-web.com/notices/fonctionnelle-graphique/couleurs/assurer-la-comprehension-de-linformation-meme-en-labsence-de-couleurs/
+
+
+────────────────────────────────────────────────────────────────────────────────
+1.2. Le contraste entre le texte et son arrière-plan atteint au moins 4,5:1 (texte normal) ou 3:1 (texte ≥ 18 pt ou 14 pt gras). Exemptés : textes désactivés, décoratifs ou de logo.
+────────────────────────────────────────────────────────────────────────────────
+
+  Ressource : Assurer un contraste suffisant entre les textes et l'arrière-plan | https://www.accede-web.com/notices/fonctionnelle-graphique/couleurs/assurer-un-contraste-suffisant-entre-les-textes-et-larriere-plan/
+
+
+────────────────────────────────────────────────────────────────────────────────
+1.3. Les éléments graphiques informatifs et interactifs (icônes, contours de champs, états hover/focus) atteignent un ratio de contraste d'au moins 3:1 avec leur arrière-plan, y compris sur fond coloré (pas seulement sur fond blanc).
+────────────────────────────────────────────────────────────────────────────────
+
+  Ressource : Assurer un contraste suffisant entre les éléments graphiques informatifs et interactifs avec leur arrière-plan | https://www.accede-web.com/notices/fonctionnelle-graphique/couleurs/assurer-un-contraste-suffisant-entre-les-elements-graphiques-informatifs-et-interactifs-avec-leur-arriere-plan/
+
+
+────────────────────────────────────────────────────────────────────────────────
+1.4. Une instruction ne repose jamais uniquement sur la forme, la taille, la couleur ou la position d'un élément (« le bouton rond », « le tableau à droite ») ; elle est complétée par un repère textuel identifiable sans perception visuelle (nom, libellé, numéro).
+────────────────────────────────────────────────────────────────────────────────
+
+  Ressource : Règles supplémentaires pour la conformité | https://www.accede-web.com/notices/fonctionnelle-graphique/regles-supplementaires-pour-la-conformite/
+
+
+================================================================================
+2. ADAPTABILITÉ DE LA MISE EN PAGE
+================================================================================
+
+────────────────────────────────────────────────────────────────────────────────
+2.1. Si le texte est agrandi jusqu'à 200 %, la mise en page l'absorbe sans perte de contenu ni de fonctionnalité : aucun chevauchement, aucune troncature, boutons et formulaires restent utilisables — les blocs sont donc dimensionnés en unités relatives (em, rem, %), jamais en pixels fixes.
+────────────────────────────────────────────────────────────────────────────────
+
+GHERKIN — MODÈLE À COMPLÉTER
+  Scénario : Consulter [nom de l'écran / du composant] avec un texte agrandi à 200 %
+  Étant donné [l'écran / le composant] affiché avec les paramètres de police du navigateur réglés à 200 %
+  Quand une personne consulte cette page
+  Alors tout le contenu et toutes les fonctionnalités restent visibles et utilisables, sans chevauchement ni texte tronqué
+  (le designer précise l'écran ou le composant testé, en particulier les zones à risque : cartes, tableaux, boutons groupés)
+
+
+────────────────────────────────────────────────────────────────────────────────
+2.2. Si les espacements de texte sont augmentés (interligne ×1,5, paragraphes ×2, lettres +0,12em, mots +0,16em), la présentation les absorbe sans chevauchement ni perte de contenu — les gabarits sont testés avec ces valeurs agrandies pour repérer les débordements.
+────────────────────────────────────────────────────────────────────────────────
+
+GHERKIN — MODÈLE À COMPLÉTER
+  Scénario : Consulter [nom de l'écran / du composant] avec des espacements de texte augmentés
+  Étant donné [l'écran / le composant] affiché avec un interligne ×1,5, un espacement de paragraphe ×2, une justification de lettre +0,12em et de mot +0,16em
+  Quand une personne consulte cette page
+  Alors aucun texte n'est tronqué ni superposé à un autre élément
+  (le designer précise l'écran ou le composant à risque : libellés courts sur fond de couleur, boutons, étiquettes de formulaire)
+
+
+────────────────────────────────────────────────────────────────────────────────
+2.3. Si l'écran est zoomé à 400 % ou mesure 320 px de large, tous les contenus restent accessibles sans défilement horizontal, en portrait comme en paysage — les maquettes sont conçues mobile-first, avec la version 320 px des éléments critiques explicitement prévue et testée.
+────────────────────────────────────────────────────────────────────────────────
+
+Exception : un tableau de données large peut nécessiter un défilement
+horizontal dédié — prévoir dans ce cas une indication visuelle et un moyen
+de scroll.
+
+GHERKIN — MODÈLE À COMPLÉTER
+  Scénario : Consulter [nom de l'écran] sur une largeur de 320 px
+  Étant donné [l'écran] affiché sur un viewport de 320 px de large (zoom 400 %), en orientation [portrait/paysage]
+  Quand une personne consulte cette page
+  Alors tout le contenu reste accessible sans défilement horizontal
+  (à répéter pour un tableau de données large : préciser alors le moyen de défilement horizontal dédié et son indication visuelle)
+
+  Ressource : Toujours concevoir l'interface de manière responsive | https://www.accede-web.com/notices/fonctionnelle-graphique/orientation-et-taille-decran/concevoir-linterface-de-maniere-responsive/
+
+
+────────────────────────────────────────────────────────────────────────────────
+2.4. Si l'affichage passe en vue mobile ou responsive, tout contenu et toute fonctionnalité disponible en vue bureau reste accessible, même si sa présentation change — jamais masqué pour gagner de la place, ni visuellement ni pour les lecteurs d'écran.
+────────────────────────────────────────────────────────────────────────────────
+
+GHERKIN — MODÈLE À COMPLÉTER
+  Scénario : Retrouver [fonctionnalité / contenu] en vue mobile
+  Étant donné [fonctionnalité ou contenu] disponible sur la version bureau de [nom de l'écran]
+  Quand une personne consulte la version mobile ou responsive de cet écran
+  Alors elle retrouve la même fonctionnalité ou le même contenu, y compris via un lecteur d'écran, même si sa présentation a changé
+
+  Ressource : Ne pas supprimer de fonctionnalités ou de contenus en vues responsive | https://www.accede-web.com/notices/fonctionnelle-graphique/orientation-et-taille-decran/ne-pas-supprimer-de-fonctionnalites-ou-de-contenus-en-vues-responsive/
+
+
+────────────────────────────────────────────────────────────────────────────────
+2.5. Si l'écran change d'orientation (portrait ↔ paysage), tous les contenus et fonctionnalités restent disponibles et utilisables — sauf si l'orientation est indispensable à la fonction elle-même (ex. piano virtuel).
+────────────────────────────────────────────────────────────────────────────────
+
+GHERKIN — MODÈLE À COMPLÉTER
+  Scénario : Utiliser [nom de l'écran] après un changement d'orientation
+  Étant donné [l'écran] affiché en orientation portrait
+  Quand une personne fait pivoter son appareil en paysage (ou inversement)
+  Alors tous les contenus et fonctionnalités restent disponibles et utilisables
+  (sauf si l'orientation portrait ou paysage est indispensable à la fonction elle-même — le préciser explicitement si c'est le cas)
+
+  Ressource : Ne pas brider la possibilité de changer l'orientation de l'affichage | https://www.accede-web.com/notices/fonctionnelle-graphique/regles-supplementaires-pour-la-conformite/ne-pas-brider-la-possibilite-de-changer-lorientation-de-laffichage/
+
+
+================================================================================
+3. IMAGES ET ICÔNES
+================================================================================
+
+────────────────────────────────────────────────────────────────────────────────
+3.1. Les images et icônes purement décoratives (n'ajoutant aucune information à ce que le texte exprime déjà) sont annotées comme telles dans la maquette, pour qu'un développeur puisse les déclarer programmatiquement comme telles dans le code.
+────────────────────────────────────────────────────────────────────────────────
+
+EXEMPLES D'IMAGES DÉCORATIVES
+  • Photo de paysage en fond d'un bandeau dont le texte porte déjà le message
+  • Séparateur graphique entre deux sections (ligne, vague, motif)
+  • Icône illustrative à côté d'un titre déjà explicite (ex. ampoule à côté de « Nos idées »)
+  • Photo d'ambiance en complément d'une vraie photo produit déjà décrite ailleurs
+  • Pictogramme redondant avec un texte de bouton déjà visible (ex. flèche à côté de « Suivant »)
+
+
+
+────────────────────────────────────────────────────────────────────────────────
+3.2. Les images et icônes informatives (véhiculant une information absente du texte environnant) sont annotées dans la maquette avec le texte alternatif proposé par le designer ou le rédacteur, pour qu'un développeur puisse les déclarer programmatiquement dans le code.
+────────────────────────────────────────────────────────────────────────────────
+
+EXEMPLES D'IMAGES INFORMATIVES
+  • Icône de cadenas signalant un paiement sécurisé, sans texte à proximité → alt = "Paiement sécurisé"
+  • Photo d'un produit sur une fiche produit → alt décrivant le produit (couleur, matière, forme)
+  • Icône météo seule dans un tableau de prévisions → alt = "Ensoleillé"
+  • Graphique ou infographie de données → alt résumant les valeurs clés
+  • Capture d'écran illustrant une étape dans un tutoriel → alt décrivant ce qui est visible à l'écran
+
+
+
+────────────────────────────────────────────────────────────────────────────────
+3.3. Les images-liens (logos, icônes de navigation) et les boutons composés uniquement d'une icône sont annotés dans la maquette avec un intitulé qui décrit leur destination ou leur action, jamais leur apparence (pas « Logo TF1 » mais « TF1 — Retour à l'accueil »), pour qu'un développeur puisse les déclarer programmatiquement dans le code ; le texte visible reste préférable dès que l'espace le permet.
+────────────────────────────────────────────────────────────────────────────────
+
+
+
+────────────────────────────────────────────────────────────────────────────────
+3.4. Les images complexes (infographies, organigrammes, cartes, graphiques) sont accompagnées d'un texte alternatif court ET d'une description détaillée, accessible à proximité ou via un lien/bouton dédié.
+────────────────────────────────────────────────────────────────────────────────
+
+GHERKIN — MODÈLE À COMPLÉTER
+  Scénario : Accéder à la description détaillée de [nom de l'image complexe]
+  Étant donné [l'infographie / le graphique / la carte] présente sur [nom de l'écran]
+  Quand une personne utilisant un lecteur d'écran atteint l'image
+  Alors elle entend un texte alternatif court, puis peut accéder à une description détaillée [via un lien « Description détaillée » / un bouton / un texte adjacent] sans manipulation complexe
+  (le designer précise le mécanisme d'accès retenu et le contenu de la description détaillée)
+
+
+================================================================================
+4. LIENS ET BOUTONS
+================================================================================
+
+────────────────────────────────────────────────────────────────────────────────
+4.1. Les liens dans du texte courant se distinguent par plus que leur couleur — un soulignement suffit ; les liens déjà visités reçoivent un état visuel distinct.
+────────────────────────────────────────────────────────────────────────────────
+
+  Ressource : Différencier visuellement les liens présents dans du texte | https://www.accede-web.com/notices/fonctionnelle-graphique/liens/differencier-visuellement-les-liens-presents-dans-du-texte/
+
+
+────────────────────────────────────────────────────────────────────────────────
+4.2. Les intitulés de liens et de boutons décrivent leur destination ou leur action dès le début du texte, jamais une URL brute.
+────────────────────────────────────────────────────────────────────────────────
+
+  Ressource : Prévoir un intitulé explicite pour chaque lien et bouton | https://www.accede-web.com/notices/fonctionnelle-graphique/bonnes-pratiques/prevoir-un-intitule-explicite-pour-chaque-lien-et-bouton/
+
+
+────────────────────────────────────────────────────────────────────────────────
+4.3. Quand plusieurs liens ou boutons partagent le même texte générique (« En savoir plus », « Lire la suite ») mais mènent à des destinations ou déclenchent des actions différentes, chaque occurrence est complétée par une précision qui les distingue.
+────────────────────────────────────────────────────────────────────────────────
+
+EXEMPLE
+  Sur une liste d'articles, chaque lien « En savoir plus » précise sur quoi :
+  « En savoir plus — Accessibilité des formulaires »,
+  « En savoir plus — Contraste des couleurs »…
+
+  Ressource : Prévoir un intitulé explicite pour chaque lien et bouton | https://www.accede-web.com/notices/fonctionnelle-graphique/bonnes-pratiques/prevoir-un-intitule-explicite-pour-chaque-lien-et-bouton/
+
+
+────────────────────────────────────────────────────────────────────────────────
+4.4. Les liens qui ouvrent une nouvelle fenêtre ou un nouvel onglet informent la personne avant l'activation (mention texte ou icône accompagnée d'un texte masqué visuellement) ; par défaut, un lien reste cependant ouvert dans le même onglet dès que c'est possible.
+────────────────────────────────────────────────────────────────────────────────
+
+  Ressource : Règles supplémentaires pour la conformité | https://www.accede-web.com/notices/fonctionnelle-graphique/regles-supplementaires-pour-la-conformite/
+
+
+────────────────────────────────────────────────────────────────────────────────
+4.5. Les liens de téléchargement indiquent dans leur intitulé ou à proximité immédiate le format et le poids du fichier, et sa langue si celle-ci diffère de la langue de la page (ex. « Télécharger le rapport annuel (PDF, 2,4 Mo) » ou « Annual Report 2025 (PDF, anglais, 1,8 Mo) »).
+────────────────────────────────────────────────────────────────────────────────
+
+  Ressource : Indiquer le format et le poids de chaque fichier à télécharger | https://www.accede-web.com/notices/fonctionnelle-graphique/bonnes-pratiques/indiquer-le-format-et-le-poids-de-chaque-fichier-a-telecharger/
+
+
+================================================================================
+5. STRUCTURE DU CONTENU
+================================================================================
+
+────────────────────────────────────────────────────────────────────────────────
+5.1. Chaque titre visible porte un niveau (H1 à H6) précisé dans la maquette : un seul H1 par page, aucun saut de niveau (jamais de H2 direct à H4), jamais un niveau de titre pour son seul effet visuel sur un texte qui n'en est pas un ; chaque titre reste court, commence par le mot le plus significatif et décrit fidèlement la section qui suit.
+────────────────────────────────────────────────────────────────────────────────
+
+EXEMPLES DE HIÉRARCHIE CONFORME
+  Page d'accueil :
+    H1 : Nom du site ou accroche principale
+    H2 : "À la une", "Nos services", "Témoignages"
+    H3 : Titres des articles ou cartes dans chaque section
+
+  Page article :
+    H1 : Titre de l'article
+    H2 : Sous-titres des sections de l'article
+    H3 : Sous-sous-titres si nécessaire
+
+
+
+────────────────────────────────────────────────────────────────────────────────
+5.2. Une série d'éléments liés est structurée en liste — numérotée si l'ordre des éléments compte, à puces sinon — jamais comme du texte juxtaposé par des virgules ou des retours à la ligne.
+────────────────────────────────────────────────────────────────────────────────
+
+
+
+────────────────────────────────────────────────────────────────────────────────
+5.3. Les grandes régions de la page (en-tête, navigation, contenu principal, pied de page, contenu complémentaire) sont annotées dans la maquette avec leur landmark correspondant ; si plusieurs zones de navigation existent, chacune porte un nom distinct (ex. « Navigation principale », « Fil d'Ariane »).
+────────────────────────────────────────────────────────────────────────────────
+
+RÉGIONS OBLIGATOIRES À ANNOTER
+  Région            Balise HTML   Rôle ARIA       Contenu typique
+  ───────────────── ───────────── ─────────────── ──────────────────────────────
+  En-tête           <header>      banner          Logo, navigation principale,
+                                                   moteur de recherche
+  Navigation        <nav>         navigation      Menu de navigation
+                                                   (nommer chaque nav)
+  Contenu principal <main>        main            Contenu unique de la page
+  Pied de page      <footer>      contentinfo     Mentions légales, liens
+  Complémentaire    <aside>       complementary   Sidebar, contenu connexe
+
+
+
+================================================================================
+6. CLAVIER ET FOCUS
+================================================================================
+
+────────────────────────────────────────────────────────────────────────────────
+6.1. Le focus clavier n'est jamais supprimé ni masqué : le style natif du navigateur (:focus-visible) est conservé par défaut ; s'il est personnalisé, le contour mesure au moins 2 px avec un contraste d'au moins 3:1 à la fois avec l'état non focalisé et les couleurs adjacentes, et entoure entièrement le composant — jamais entièrement caché par un élément superposé (bandeau, modale), il reste au moins partiellement visible.
+────────────────────────────────────────────────────────────────────────────────
+
+GHERKIN — MODÈLE À COMPLÉTER
+  Scénario : Repérer le focus clavier sur [nom du composant]
+  Étant donné [nom du composant] affiché sur [nom de l'écran], y compris lorsqu'un [bandeau / une modale] est superposé
+  Quand une personne navigue au clavier avec la touche Tab jusqu'à ce composant
+  Alors le contour de focus reste visible, au moins partiellement, avec un contraste d'au moins 3:1
+  (au développeur de choisir le moyen technique ; le designer précise le style de focus s'il est personnalisé, et les cas où un élément pourrait le recouvrir)
+
+  Ressource : Ne pas personnaliser l'aspect visuel de la prise de focus | https://www.accede-web.com/notices/fonctionnelle-graphique/navigation/ne-pas-personnaliser-laspect-visuel-de-la-prise-de-focus/
+
+
+────────────────────────────────────────────────────────────────────────────────
+6.2. L'ordre de tabulation (déplacement du focus à la touche Tab) est prévu dans la maquette et précisé dans les spécifications : il suit l'ordre visuel logique des éléments, sans jamais sauter de façon incohérente d'un composant à l'autre.
+────────────────────────────────────────────────────────────────────────────────
+
+GHERKIN — MODÈLE À COMPLÉTER
+  Scénario : Parcourir [nom de l'écran] avec la touche Tab
+  Étant donné [nom de l'écran] avec ses composants interactifs
+  Quand une personne navigue au clavier avec la touche Tab
+  Alors le focus se déplace dans l'ordre visuel logique : [1. …, 2. …, 3. …] sans saut incohérent
+  (le designer numérote l'ordre de tabulation attendu directement sur la maquette, y compris pour les contenus qui apparaissent dynamiquement comme un message d'erreur)
+
+
+────────────────────────────────────────────────────────────────────────────────
+6.3. Un contenu qui apparaît uniquement au survol ou à la prise de focus (infobulle, sous-menu) reste affiché tant que le pointeur ou le focus est dessus, et peut être fermé simplement (touche Échap ou action équivalente) — jamais un contenu qui disparaît dès qu'on essaie de l'atteindre avec le pointeur.
+────────────────────────────────────────────────────────────────────────────────
+
+GHERKIN — MODÈLE À COMPLÉTER
+  Scénario : Consulter [l'infobulle / le sous-menu] de [nom du composant]
+  Étant donné [nom du composant] déclenchant l'affichage de [l'infobulle / le sous-menu] au survol ou à la prise de focus
+  Quand une personne survole ou atteint ce composant au clavier
+  Alors le contenu supplémentaire reste affiché tant que le pointeur ou le focus est dessus, et peut être refermé avec la touche Échap
+
+
+────────────────────────────────────────────────────────────────────────────────
+6.4. Chaque tâche est réalisable au clavier avec des interactions prévisibles s'appuyant sur les modèles natifs ; la prise de focus seule ne déclenche jamais un changement de contexte important, et la modification d'un réglage a un effet prévisible, ou la personne en est prévenue au préalable.
+────────────────────────────────────────────────────────────────────────────────
+
+GHERKIN — MODÈLE À COMPLÉTER
+  Scénario : Réaliser [nom de la tâche] au clavier
+  Étant donné [nom de l'écran ou du composant] permettant de [action]
+  Quand une personne réalise cette action uniquement au clavier
+  Alors elle y parvient sans piège au clavier, et la seule prise de focus ne déclenche jamais [changement de contexte, ex. soumission, navigation, ouverture de fenêtre]
+
+
+────────────────────────────────────────────────────────────────────────────────
+6.5. Un raccourci clavier à une seule touche peut être désactivé ou remplacé par une combinaison multi-touches — sauf s'il n'agit que lorsqu'un composant précis a le focus (ex. flèche bas ouvrant une liste déroulante) ; les autres raccourcis combinent toujours une touche de modification (Alt, Contrôle…).
+────────────────────────────────────────────────────────────────────────────────
+
+GHERKIN — MODÈLE À COMPLÉTER
+  Scénario : Utiliser le raccourci [touche] sur [nom de l'écran]
+  Étant donné [nom de l'écran] proposant le raccourci clavier à une seule touche [touche] pour [action]
+  Quand une personne consulte les réglages de raccourcis
+  Alors elle peut le désactiver ou le remplacer par une combinaison multi-touches
+  (sauf si le raccourci n'agit que lorsqu'un composant précis a le focus — le préciser si c'est le cas)
+
+  Ressource : Rendre désactivables ou reconfigurables les raccourcis clavier à une touche | https://www.accede-web.com/notices/fonctionnelle-graphique/regles-supplementaires-pour-la-conformite/rendre-desactivables-ou-reconfigurables-les-raccourcis-clavier-a-une-touche/
+
+
+================================================================================
+7. NAVIGATION ET REPÉRAGE
+================================================================================
+
+────────────────────────────────────────────────────────────────────────────────
+7.1. Le site propose au moins deux moyens de navigation parmi trois — menu principal, plan du site, moteur de recherche global — disponibles au même endroit sur toutes les pages, jamais un seul de ces trois moyens isolé.
+────────────────────────────────────────────────────────────────────────────────
+
+GHERKIN — MODÈLE À COMPLÉTER
+  Scénario : Trouver un moyen de navigation alternatif sur [nom du site / de la section]
+  Étant donné n'importe quelle page de [nom du site ou de la section]
+  Quand une personne cherche un moyen de naviguer autre que le menu principal
+  Alors elle trouve, au même endroit sur toutes les pages, au moins un second moyen parmi le plan du site et le moteur de recherche
+
+  Ressource : Prévoir au moins deux moyens de navigation parmi un menu principal, un plan du site et un moteur de recherche | https://www.accede-web.com/notices/fonctionnelle-graphique/navigation/prevoir-au-moins-deux-moyens-de-navigation-parmi-un-menu-principal-un-plan-du-site-et-un-moteur-de-recherche/
+
+
+────────────────────────────────────────────────────────────────────────────────
+7.2. La disposition et l'ordre des éléments de navigation (menus, moteur de recherche, fil d'Ariane, lien plan du site) restent cohérents sur tout le site, tout comme la position des mécanismes d'aide (chat, FAQ, téléphone, formulaire de contact) — seule la page d'accueil peut différer du reste du site.
+────────────────────────────────────────────────────────────────────────────────
+
+GHERKIN — MODÈLE À COMPLÉTER
+  Scénario : Retrouver la navigation au même endroit sur tout le site
+  Étant donné une personne ayant déjà consulté [nom de l'écran de référence]
+  Quand elle navigue vers [une autre page du site]
+  Alors elle retrouve le menu, le moteur de recherche, le fil d'Ariane et les mécanismes d'aide au même endroit et dans le même ordre
+  (seule la page d'accueil peut différer)
+
+  Ressource : Assurer la cohérence visuelle de la navigation | https://www.accede-web.com/notices/fonctionnelle-graphique/regles-supplementaires-pour-la-conformite/assurer-la-coherence-visuelle-de-la-navigation/
+
+
+────────────────────────────────────────────────────────────────────────────────
+7.3. Une déclaration d'accessibilité est atteignable depuis le même endroit sur toutes les pages du site ; pour un site soumis au RGAA, son intitulé reflète le taux de conformité (ex. « Accessibilité : partiellement conforme »).
+────────────────────────────────────────────────────────────────────────────────
+
+  Ressource : Prévoir une déclaration d'accessibilité | https://www.accede-web.com/notices/fonctionnelle-graphique/navigation/prevoir-une-declaration-daccessibilite/
+
+
+────────────────────────────────────────────────────────────────────────────────
+7.4. Un fil d'Ariane situe la page courante dans l'arborescence du site, en particulier pour les sites de plus de deux niveaux de profondeur.
+────────────────────────────────────────────────────────────────────────────────
+
+  Ressource : Prévoir un fil d'Ariane | https://www.accede-web.com/notices/fonctionnelle-graphique/bonnes-pratiques/prevoir-un-fil-dariane/
+
+
+================================================================================
+8. FORMULAIRES
+================================================================================
+
+────────────────────────────────────────────────────────────────────────────────
+8.1. Chaque champ de formulaire a un intitulé visible et explicite — jamais le seul placeholder, qui disparaît à la saisie et manque de contraste ; un champ d'adresse sur plusieurs lignes a un intitulé distinct par ligne.
+────────────────────────────────────────────────────────────────────────────────
+
+  Ressource : Prévoir un intitulé explicite pour chaque champ de formulaire | https://www.accede-web.com/notices/fonctionnelle-graphique/formulaires/prevoir-un-intitule-explicite-pour-chaque-champ-de-formulaire/
+
+
+────────────────────────────────────────────────────────────────────────────────
+8.2. L'intitulé d'un champ est positionné à proximité immédiate de celui-ci : au-dessus ou à gauche pour un champ de saisie, à droite ou en dessous pour une case à cocher ou un bouton radio.
+────────────────────────────────────────────────────────────────────────────────
+
+  Ressource : Positionner chaque intitulé à proximité de son champ | https://www.accede-web.com/notices/fonctionnelle-graphique/formulaires/positionner-chaque-intitule-a-proximite-de-son-champ/
+
+
+────────────────────────────────────────────────────────────────────────────────
+8.3. L'intitulé d'un bouton de formulaire décrit son action sans contexte supplémentaire (pas « OK » ou « Envoyer » mais « Valider la commande »).
+────────────────────────────────────────────────────────────────────────────────
+
+  Ressource : Prévoir un intitulé explicite pour chaque bouton de formulaire | https://www.accede-web.com/notices/fonctionnelle-graphique/formulaires/prevoir-un-intitule-explicite-pour-chaque-bouton-de-formulaire/
+
+
+────────────────────────────────────────────────────────────────────────────────
+8.4. Chaque champ obligatoire est signalé par un symbole ou une mention explicite dont la signification est précisée en début de formulaire ; si tous les champs (ou presque) sont obligatoires, une seule mention générale suffit.
+────────────────────────────────────────────────────────────────────────────────
+
+  Ressource : Indiquer clairement les champs obligatoires | https://www.accede-web.com/notices/fonctionnelle-graphique/formulaires/indiquer-clairement-les-champs-obligatoires/
+
+
+────────────────────────────────────────────────────────────────────────────────
+8.5. Un format de saisie attendu (mot de passe, date, taille de fichier…) est indiqué avant la saisie, à proximité du champ concerné ; l'autocomplétion est proposée sur les champs libres dès que c'est pertinent.
+────────────────────────────────────────────────────────────────────────────────
+
+  Ressource : Prévoir des aides à la saisie | https://www.accede-web.com/notices/fonctionnelle-graphique/formulaires/prevoir-des-aides-a-la-saisie/
+
+
+────────────────────────────────────────────────────────────────────────────────
+8.6. Un message d'erreur identifie le champ concerné, la cause de l'erreur et une suggestion de correction ; il reste affiché jusqu'à une action de la personne et combine icône, couleur et texte — jamais la couleur seule.
+────────────────────────────────────────────────────────────────────────────────
+
+GHERKIN — MODÈLE À COMPLÉTER
+  Scénario : Consulter un message d'erreur sur [nom du formulaire]
+  Étant donné une erreur de saisie sur le champ [nom du champ] de [nom du formulaire]
+  Quand le message d'erreur s'affiche
+  Alors il reste affiché jusqu'à ce que la personne corrige le champ ou quitte volontairement le formulaire, et il combine icône, couleur et texte
+
+  Ressource : Prévoir des messages d'erreur explicites et des suggestions de correction | https://www.accede-web.com/notices/fonctionnelle-graphique/formulaires/prevoir-des-messages-derreur-explicites-et-des-suggestions-de-correction/
+
+
+────────────────────────────────────────────────────────────────────────────────
+8.7. Dans un formulaire long, les champs de même nature sont regroupés visuellement sous un titre clair (« Informations personnelles », « Adresse de livraison »…).
+────────────────────────────────────────────────────────────────────────────────
+
+  Ressource : Regrouper et titrer les champs de même nature | https://www.accede-web.com/notices/fonctionnelle-graphique/bonnes-pratiques/regrouper-et-titrer-les-champs-de-meme-nature/
+
+
+────────────────────────────────────────────────────────────────────────────────
+8.8. Deux champs de même fonction répétés sur plusieurs pages ou sections portent le même intitulé (pas « Arrivée » ici et « Destination » là pour le même champ).
+────────────────────────────────────────────────────────────────────────────────
+
+  Ressource : Prévoir des intitulés identiques pour les champs dont la fonction est identique | https://www.accede-web.com/notices/fonctionnelle-graphique/regles-supplementaires-pour-la-conformite/prevoir-des-intitules-identiques-pour-les-champs-dont-la-fonction-est-identique/
+
+
+────────────────────────────────────────────────────────────────────────────────
+8.9. Le bouton de soumission principal est positionné après le dernier champ, dans l'ordre de lecture naturel du formulaire.
+────────────────────────────────────────────────────────────────────────────────
+
+  Ressource : Positionner un bouton de soumission à la fin de chaque formulaire | https://www.accede-web.com/notices/fonctionnelle-graphique/bonnes-pratiques/positionner-un-bouton-de-soumission-a-la-fin-de-chaque-formulaire/
+
+
+────────────────────────────────────────────────────────────────────────────────
+8.10. Un parcours de formulaire en plusieurs étapes permet de revenir en arrière sans perdre les données déjà saisies, et ne redemande jamais une information déjà connue (pré-remplissage ou sélection).
+────────────────────────────────────────────────────────────────────────────────
+
+GHERKIN — MODÈLE À COMPLÉTER
+  Scénario : Revenir en arrière dans [nom du parcours] sans perdre ses données
+  Étant donné une personne ayant rempli l'étape [n] de [nom du parcours]
+  Quand elle revient à l'étape précédente puis avance de nouveau
+  Alors les données déjà saisies sont conservées, et aucune information déjà connue ne lui est redemandée
+
+  Ressource : Permettre de revenir en arrière sur les formulaires à étapes multiples | https://www.accede-web.com/notices/fonctionnelle-graphique/bonnes-pratiques/permettre-de-revenir-en-arriere-sur-les-formulaires-a-etapes-multiples/
+
+
+────────────────────────────────────────────────────────────────────────────────
+8.11. Avant la validation finale d'un formulaire long ou d'une transaction sensible (légale, financière), une page de récapitulatif permet de relire et corriger l'ensemble des saisies.
+────────────────────────────────────────────────────────────────────────────────
+
+  Ressource : Prévoir un récapitulatif avant la soumission finale des formulaires à étapes multiples | https://www.accede-web.com/notices/fonctionnelle-graphique/bonnes-pratiques/prevoir-un-recapitulatif-avant-la-soumission-finale-des-formulaires-a-etapes-multiples/
+
+
+────────────────────────────────────────────────────────────────────────────────
+8.12. Toute action importante (envoi de formulaire, validation de commande, suppression) déclenche un message de confirmation clairement visible indiquant qu'elle a bien été effectuée.
+────────────────────────────────────────────────────────────────────────────────
+
+  Ressource : Prévoir un message de confirmation | https://www.accede-web.com/notices/fonctionnelle-graphique/bonnes-pratiques/prevoir-un-message-de-confirmation/
+
+
+================================================================================
+9. INTERACTION POINTEUR, GESTES ET MOUVEMENT
+================================================================================
+
+────────────────────────────────────────────────────────────────────────────────
+9.1. Toute action réalisable par un geste complexe (pincer, pivoter, balayer, tracer une forme) l'est aussi par un geste simple (tap, clic) ou un bouton dédié, et ne se déclenche qu'au relâchement du doigt ou du clic — jamais dès l'appui.
+────────────────────────────────────────────────────────────────────────────────
+
+EXEMPLES
+  Geste complexe                        Alternative simple
+  ─────────────────────────────────── ────────────────────────────────────────
+  Balayer (swipe) pour un carrousel     Boutons Précédent / Suivant + puces
+  Pincer / écarter pour zoomer          Boutons Zoom avant / Zoom arrière
+  Pivoter un élément 3D avec un doigt   Boutons Pivoter à gauche / droite
+
+GHERKIN — MODÈLE À COMPLÉTER
+  Scénario : Réaliser [action] sur [nom du composant] sans geste complexe
+  Étant donné [nom du composant] proposant [le geste complexe, ex. balayage, pincement, rotation]
+  Quand une personne utilise l'alternative simple [bouton / tap] prévue
+  Alors elle obtient le même résultat, déclenché uniquement au relâchement du doigt ou du clic, jamais dès l'appui
+
+  Ressource : Prévoir une alternative pour chaque geste complexe | https://www.accede-web.com/notices/fonctionnelle-graphique/navigation/prevoir-une-alternative-pour-chaque-geste-complexe/
+
+
+────────────────────────────────────────────────────────────────────────────────
+9.2. Toute fonctionnalité déclenchée par un mouvement de l'appareil (le secouer, l'incliner) est aussi réalisable via un composant standard, sans mouvement physique — par exemple un bouton « Annuler » en plus de « secouer pour annuler » — et peut être désactivée si elle risque de se déclencher par accident.
+────────────────────────────────────────────────────────────────────────────────
+
+GHERKIN — MODÈLE À COMPLÉTER
+  Scénario : Réaliser [action] sans mouvement de l'appareil
+  Étant donné [nom du composant] proposant [action] déclenchée en secouant ou inclinant l'appareil
+  Quand une personne utilise le composant standard équivalent [bouton / commande]
+  Alors elle obtient le même résultat ; la fonction déclenchée par le mouvement peut être désactivée
+
+  Ressource : Règles supplémentaires pour la conformité | https://www.accede-web.com/notices/fonctionnelle-graphique/regles-supplementaires-pour-la-conformite/
+
+
+────────────────────────────────────────────────────────────────────────────────
+9.3. Une cible tactile mesure au moins 24 × 24 px CSS ; si elle est plus petite, un espacement suffisant l'entoure pour qu'aucune autre cible interactive n'empiète dans un rayon de 24 px.
+────────────────────────────────────────────────────────────────────────────────
+
+  Ressource : Prévoir des zones de clic suffisamment grandes et espacées | https://www.accede-web.com/notices/fonctionnelle-graphique/wcag-2-2/prevoir-des-zones-reactives-suffisamment-grandes-et-espacees/
+
+
+────────────────────────────────────────────────────────────────────────────────
+9.4. Toute fonctionnalité de glisser-déposer (drag and drop) propose une alternative accessible par un geste simple ou des boutons dédiés — par exemple des boutons de déplacement pour réordonner des éléments.
+────────────────────────────────────────────────────────────────────────────────
+
+GHERKIN — MODÈLE À COMPLÉTER
+  Scénario : Réordonner [les éléments] sans glisser-déposer
+  Étant donné [nom du composant] permettant de réordonner des éléments par glisser-déposer
+  Quand une personne utilise l'alternative [boutons de déplacement / geste simple] prévue
+  Alors elle obtient le même résultat sans avoir à maintenir un geste de glisser-déposer
+
+  Ressource : WCAG 2.2 | https://www.accede-web.com/notices/fonctionnelle-graphique/wcag-2-2/
+
+
+────────────────────────────────────────────────────────────────────────────────
+9.5. Tout contenu qui s'anime ou défile automatiquement (carrousel, animation en boucle) peut être mis en pause ou arrêté — sauf s'il dure 5 secondes ou moins — et ne clignote jamais plus de 3 fois par seconde ; la préférence système « Réduire les animations » (prefers-reduced-motion) est respectée.
+────────────────────────────────────────────────────────────────────────────────
+
+GHERKIN — MODÈLE À COMPLÉTER
+  Scénario : Contrôler [nom du contenu animé]
+  Étant donné [nom du carrousel / de l'animation] qui défile automatiquement pendant plus de 5 secondes
+  Quand une personne active le contrôle de pause
+  Alors le défilement s'arrête et reste arrêté jusqu'à une nouvelle action ; si la personne a activé « Réduire les animations » dans son système, [le contenu ne s'anime pas automatiquement / l'animation est simplifiée]
+
+  Ressource : Prévoir un moyen pour contrôler chaque contenu animé | https://www.accede-web.com/notices/fonctionnelle-graphique/contenus-riches-et-multimedias/prevoir-un-moyen-pour-controler-chaque-contenu-anime/
+
+
+================================================================================
+10. TABLEAUX                                                              [NOUVEAU]
+================================================================================
+
+────────────────────────────────────────────────────────────────────────────────
+10.1. Chaque tableau de données a un titre visible (caption) décrivant son contenu, compréhensible hors contexte.
+────────────────────────────────────────────────────────────────────────────────
+
+  Ressource : Prévoir un titre pour chaque tableau de données | https://www.accede-web.com/notices/fonctionnelle-graphique/bonnes-pratiques/prevoir-un-titre-pour-chaque-tableau-de-donnees/
+
+
+────────────────────────────────────────────────────────────────────────────────
+10.2. Un tableau à plusieurs niveaux d'en-têtes ou aux relations de données non évidentes est accompagné d'un résumé textuel expliquant sa structure ; toutes les cellules d'en-tête sont renseignées, et le tableau est décomposé en plusieurs tableaux simples quand c'est possible.
+────────────────────────────────────────────────────────────────────────────────
+
+  Ressource : Règles supplémentaires pour la conformité | https://www.accede-web.com/notices/fonctionnelle-graphique/regles-supplementaires-pour-la-conformite/
+
+
+────────────────────────────────────────────────────────────────────────────────
+10.3. Les en-têtes d'un tableau se distinguent visuellement des cellules de données (couleur, gras) ; des bordures ou un fond alterné (zébrage) facilitent le suivi des lignes, sans espace blanc excessif entre les colonnes.
+────────────────────────────────────────────────────────────────────────────────
+
+
+================================================================================
+11. CONTENU AUDIO ET VIDÉO
+================================================================================
+
+────────────────────────────────────────────────────────────────────────────────
+11.1. Chaque vidéo et contenu audio est annoncé par un titre et/ou un résumé décrivant son contenu et ses informations clés (intervenants, sujet).
+────────────────────────────────────────────────────────────────────────────────
+
+  Ressource : Prévoir un titre et/ou un résumé pour chaque vidéo et contenu audio | https://www.accede-web.com/notices/fonctionnelle-graphique/contenus-riches-et-multimedias/prevoir-un-titre-et-ou-un-resume-pour-chaque-video-et-contenu-audio/
+
+
+────────────────────────────────────────────────────────────────────────────────
+11.2. Chaque vidéo et contenu audio propose une transcription textuelle, accessible directement à proximité du média ou via un lien dédié.
+────────────────────────────────────────────────────────────────────────────────
+
+CAS PARTICULIERS
+  • Audio seul préenregistré → transcription complète du contenu
+  • Vidéo → sous-titres de la piste audio, et transcription ou audiodescription de l'information visuelle
+  • Contenu en direct (audio ou vidéo) → sous-titres ou flux texte en direct
+  • Présentation orale → décrire oralement toute information visuelle importante, ou utiliser une vidéo audiodécrite
+
+GHERKIN — MODÈLE À COMPLÉTER
+  Scénario : Suivre [nom du contenu en direct] avec des sous-titres
+  Étant donné [nom du flux audio ou vidéo en direct]
+  Quand une personne sourde ou malentendante consulte ce contenu
+  Alors elle dispose de sous-titres ou d'un flux texte synchronisés avec le direct
+
+  Ressource : Prévoir un moyen d'accès à la transcription textuelle de chaque vidéo et contenu audio | https://www.accede-web.com/notices/fonctionnelle-graphique/contenus-riches-et-multimedias/prevoir-un-moyen-dacces-a-la-transcription-textuelle-de-chaque-video-et-contenu-audio/
+
+
+────────────────────────────────────────────────────────────────────────────────
+11.3. Chaque vidéo et contenu audio dispose au minimum d'un bouton Lecture/Pause et d'un contrôle Son (activer/désactiver) ; contrôle du volume, position/durée et barre de progression sont recommandés en complément.
+────────────────────────────────────────────────────────────────────────────────
+
+  Ressource : Prévoir des moyens pour contrôler la lecture et le son de chaque vidéo et contenu audio | https://www.accede-web.com/notices/fonctionnelle-graphique/contenus-riches-et-multimedias/prevoir-des-moyens-pour-controler-la-lecture-et-le-son-de-chaque-video-et-contenu-audio/
+
+
+────────────────────────────────────────────────────────────────────────────────
+11.4. Un son qui se déclenche automatiquement au chargement de la page peut être coupé ou mis en pause (mêmes contrôles qu'en 11.3), sauf s'il dure moins de 3 secondes.
+────────────────────────────────────────────────────────────────────────────────
+
+GHERKIN — MODÈLE À COMPLÉTER
+  Scénario : Couper un son déclenché automatiquement sur [nom de l'écran]
+  Étant donné [nom de l'écran] déclenchant la lecture automatique d'un son de plus de 3 secondes
+  Quand la page se charge
+  Alors une personne peut immédiatement couper ou mettre en pause ce son avec les mêmes contrôles que pour un lecteur audio/vidéo classique
+
+  Ressource : Prévoir un moyen pour contrôler les sons déclenchés automatiquement | https://www.accede-web.com/notices/fonctionnelle-graphique/regles-supplementaires-pour-la-conformite/prevoir-un-moyen-pour-controler-les-sons-declenches-automatiquement/
+
+
+================================================================================
+12. TEMPS, DÉLAIS ET INTERRUPTIONS
+================================================================================
+
+────────────────────────────────────────────────────────────────────────────────
+12.1. Toute session à durée limitée (transaction bancaire, démarche administrative…) peut être prolongée ou la limite supprimée ; si ce n'est pas possible pour des raisons de sécurité, un système d'extension est proposé avant l'expiration (ex. « Vous allez être déconnecté dans 2 minutes, prolonger la session ? »).
+────────────────────────────────────────────────────────────────────────────────
+
+GHERKIN — MODÈLE À COMPLÉTER
+  Scénario : Prolonger une session avant son expiration sur [nom du parcours]
+  Étant donné une session de [durée] sur [nom du parcours, ex. paiement, démarche]
+  Quand il reste [2 minutes] avant l'expiration
+  Alors une personne est prévenue et peut prolonger sa session en un clic, ou la limite est supprimée si aucune contrainte de sécurité ne l'impose
+
+  Ressource : Prévoir un moyen pour contrôler la durée de la session | https://www.accede-web.com/notices/fonctionnelle-graphique/temps-de-consultation/prevoir-un-moyen-pour-controler-la-duree-de-la-session/
+
+
+────────────────────────────────────────────────────────────────────────────────
+12.2. Tout rafraîchissement automatique de tout ou partie de la page (fil d'actualités, cours boursier, carte temps réel…) peut être désactivé et réactivé — ou à défaut espacé dans le temps — idéalement via un contrôle centralisé si plusieurs rafraîchissements coexistent.
+────────────────────────────────────────────────────────────────────────────────
+
+GHERKIN — MODÈLE À COMPLÉTER
+  Scénario : Désactiver le rafraîchissement automatique de [nom du composant]
+  Étant donné [nom du composant, ex. fil d'actualités, cours boursier] se rafraîchissant automatiquement toutes les [x secondes]
+  Quand une personne active le contrôle de pause
+  Alors le rafraîchissement automatique s'arrête et reste arrêté jusqu'à réactivation volontaire
+
+  Ressource : Prévoir un moyen pour contrôler les rafraîchissements automatiques | https://www.accede-web.com/notices/fonctionnelle-graphique/temps-de-consultation/prevoir-un-moyen-pour-controler-les-rafraichissements-automatiques/
+
+
+────────────────────────────────────────────────────────────────────────────────
+12.3. Une redirection automatique vers une autre page peut être contrôlée ou arrêtée par la personne.
+────────────────────────────────────────────────────────────────────────────────
+
+GHERKIN — MODÈLE À COMPLÉTER
+  Scénario : Contrôler une redirection automatique depuis [nom de l'écran]
+  Étant donné [nom de l'écran] programmé pour rediriger automatiquement vers [nom de la page cible] après [x secondes]
+  Quand une personne consulte cet écran avant l'expiration du délai
+  Alors elle peut annuler ou différer la redirection avant qu'elle ne se déclenche
+
+  Ressource : Règles supplémentaires pour la conformité | https://www.accede-web.com/notices/fonctionnelle-graphique/regles-supplementaires-pour-la-conformite/
+
+
+================================================================================
+13. AUTHENTIFICATION                                                      [NOUVEAU]
+================================================================================
+
+────────────────────────────────────────────────────────────────────────────────
+13.1. La connexion ne demande jamais de résoudre un puzzle cognitif, de mémoriser ou retranscrire un mot de passe complexe sans aide, ni de recopier un texte sans assistance — privilégier lien magique, biométrie ou gestionnaire de mots de passe compatible ; si l'une de ces actions reste nécessaire, une alternative ou une aide est prévue.
+────────────────────────────────────────────────────────────────────────────────
+
+GHERKIN — MODÈLE À COMPLÉTER
+  Scénario : Se connecter à [nom du service] sans épreuve cognitive
+  Étant donné l'écran de connexion à [nom du service]
+  Quand une personne s'authentifie via [lien magique / biométrie / gestionnaire de mots de passe]
+  Alors elle n'a besoin ni de résoudre un puzzle, ni de mémoriser un mot de passe complexe sans aide, ni de recopier un texte sans assistance
+  (si l'une de ces actions reste nécessaire, préciser ici l'alternative ou l'aide prévue)
+
+  Ressource : WCAG 2.2 | https://www.accede-web.com/notices/fonctionnelle-graphique/wcag-2-2/
+
+
+────────────────────────────────────────────────────────────────────────────────
+13.2. Un CAPTCHA n'est jamais uniquement visuel : une alternative est toujours proposée (version audio, question simple, bouton « Essayer un autre code ») — jamais un reCAPTCHA v2 seul, non conforme ; préférer Friendly Captcha ou reCAPTCHA v3.
+────────────────────────────────────────────────────────────────────────────────
+
+GHERKIN — MODÈLE À COMPLÉTER
+  Scénario : Passer le CAPTCHA de [nom du formulaire] sans le percevoir visuellement
+  Étant donné le CAPTCHA affiché sur [nom du formulaire]
+  Quand une personne ne peut pas résoudre l'épreuve visuelle
+  Alors elle dispose d'une alternative [version audio / question simple / bouton « Essayer un autre code »] pour valider le formulaire
+
+  Ressource : Prévoir une alternative pour chaque CAPTCHA uniquement visuel | https://www.accede-web.com/notices/fonctionnelle-graphique/regles-supplementaires-pour-la-conformite/prevoir-une-alternative-pour-chaque-captcha-uniquement-visuel/
+
+
+================================================================================
+14. BONNES PRATIQUES TYPOGRAPHIQUES ET RÉDACTIONNELLES
+================================================================================
+
+────────────────────────────────────────────────────────────────────────────────
+14.1. Le corps de texte compte au maximum 70 à 80 caractères par ligne et reste aligné à gauche — jamais justifié, centré ou à droite ; un bloc de texte long (plus de 2-3 lignes) n'est jamais centré, et l'italique, les majuscules et le soulignement (réservé aux liens) restent d'un usage limité.
+────────────────────────────────────────────────────────────────────────────────
+
+  Ressource : Ne pas justifier le texte | https://www.accede-web.com/notices/fonctionnelle-graphique/bonnes-pratiques/ne-pas-justifier-le-texte/
+
+
+────────────────────────────────────────────────────────────────────────────────
+14.2. Le corps de texte utilise une police sans-serif ou serif classique — jamais cursive, fantaisie ou à empattements très décoratifs — dans une taille d'au moins 16 px, jamais inférieure à 12 px même pour un texte secondaire.
+────────────────────────────────────────────────────────────────────────────────
+
+
+────────────────────────────────────────────────────────────────────────────────
+14.3. Un sigle est développé entre parenthèses ou via une infobulle lors de sa première occurrence sur la page (ex. « RGAA (Référentiel Général d'Amélioration de l'Accessibilité) »).
+────────────────────────────────────────────────────────────────────────────────
+
+  Ressource : Expliciter les sigles | https://www.accede-web.com/notices/fonctionnelle-graphique/bonnes-pratiques/expliciter-les-sigles/
+
+
+────────────────────────────────────────────────────────────────────────────────
+14.4. Les lettres capitales conservent leurs accents (É, À, Ç, Ê…) — jamais supprimés, au risque de nuire à la lisibilité et à la restitution par les lecteurs d'écran.
+────────────────────────────────────────────────────────────────────────────────
+
+  Ressource : Conserver les accents sur les lettres capitales | https://www.accede-web.com/notices/fonctionnelle-graphique/bonnes-pratiques/conserver-les-accents-sur-les-lettres-capitales/
+
+
+────────────────────────────────────────────────────────────────────────────────
+14.5. Un symbole dont la signification n'est pas immédiatement évidente est accompagné d'un texte explicatif à proximité (ex. cible → « Recherche d'arrêts », horloge → « Horaires ») ; une infobulle n'est envisagée qu'en dernier recours, moins efficace qu'un texte visible.
+────────────────────────────────────────────────────────────────────────────────
+
+  Ressource : Associer un texte à chaque symbole ambigu | https://www.accede-web.com/notices/fonctionnelle-graphique/bonnes-pratiques/associer-un-texte-a-chaque-symbole-ambigu/
+
+
+================================================================================
+FIN DU DOCUMENT
+AcceDe Web v4.1.2 + Not-Checklist Intopia — Notice fonctionnelle et graphique
+Juillet 2026
+================================================================================

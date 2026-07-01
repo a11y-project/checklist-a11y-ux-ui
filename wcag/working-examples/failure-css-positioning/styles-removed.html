@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Improper use of CSS to create a tabular layout | WCAG 2</title>
+   <style>
+      body{
+        background:#fff;
+        color:#000;
+        font:100% / 1.5 sans-serif;
+      }
+   </style>
+</head>
+<body>
+<h2>Simulated removal of CSS to demonstrate improper use of CSS to create a tabular layout</h2>
+<p>The tablular layout in this example was created via CSS. In this example the
+style information has been removed from the document. This demonstrates a
+Failure due to changing the meaning of content by positioning information with CSS since the reading order of the document can not be
+programmatically determined. </p>
+   <div class="box">
+      <span class="menu1">Products</span>
+      <span class="menu2">Locations</span>
+      <span class="item1">Telephones</span>
+      <span class="item2">Computers</span>
+      <span class="item3">Portable MP3 Players</span>
+      <span class="item5">Wisconsin</span>
+      <span class="item4">Idaho</span>
+   </div>
+</body>
+</html>

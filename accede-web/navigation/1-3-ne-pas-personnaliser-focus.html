@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>1.3. Ne pas personnaliser l'aspect visuel de la prise de focus — AcceDe Web</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<header>
+  <p class="source">AcceDe Web — 1. Navigation</p>
+  <h1>1.3. Ne pas personnaliser l'aspect visuel de la prise de focus</h1>
+</header>
+
+<nav class="breadcrumb">
+  <a href="../index.html">Accueil</a><span>›</span>
+  <a href="index.html">Navigation</a><span>›</span>
+  1.3
+</nav>
+
+<div class="regle">
+  Ne pas personnaliser la visibilité du focus au clavier — privilégier le style navigateur par défaut, suffisamment contrasté et visible.
+</div>
+
+<h2>Comportement du focus</h2>
+
+<p>Le focus n'apparaît pas lors de l'utilisation de la souris. Le style par défaut du navigateur utilise la pseudo-classe CSS <code>:focus-visible</code>, limitant l'affichage du focus aux seuls utilisateurs clavier.</p>
+
+<h3>Styles par navigateur</h3>
+<ul>
+  <li><strong>Firefox</strong> : bordure doublée bleue et blanche</li>
+  <li><strong>Chrome</strong> : bordure doublée noire et blanche</li>
+</ul>
+
+<div class="attention">Si la personnalisation du focus s'avère nécessaire, des styles différents doivent être appliqués selon la couleur du fond pour garantir un contraste suffisant. Cette personnalisation peut devenir source d'erreurs et s'avérer difficile à maintenir, notamment lors d'évolutions de design ou d'intégration de composants externes.</div>
+
+<h2>Correspondance RGAA 4.1.2</h2>
+<p>Critère : <span class="rgaa-tag">10.7</span></p>
+
+<footer>
+  <p><a href="index.html">← Retour à Navigation</a> — Source : <a href="https://www.accede-web.com/notices/fonctionnelle-graphique/navigation/ne-pas-personnaliser-laspect-visuel-de-la-prise-de-focus/" target="_blank">accede-web.com</a></p>
+</footer>
+
+</body>
+</html>

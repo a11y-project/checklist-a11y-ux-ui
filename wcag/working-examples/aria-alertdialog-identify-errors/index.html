@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Using aria-alertdialog to Identify Errors | WCAG 2</title>
+	<style>
+		body {
+			background: #fff;
+			color: #000;
+			font: 100% / 1.5 sans-serif;
+		}
+
+		:focus-visible {
+			outline: 2px solid darkblue;
+			outline-offset: 2px;
+		}
+
+		button {
+			background: #666;
+			border: 1px solid #000;
+			color: #fff;
+			font: inherit;
+		}
+
+		[role=alertdialog] {
+			background: #fff;
+			border: thin #000 solid;
+			box-sizing: border-box;
+			height: fit-content;
+			inset: 1rem;
+			margin: auto;
+			max-height: calc(100vh - 2rem);
+			max-width: 40rem;
+			overflow-y: auto;
+			padding: 1rem;
+			position: fixed;
+			width: calc(100% - 2rem);
+			z-index: 3;
+
+			& h1 {
+				margin: 0;
+			}
+		}
+
+		[hidden] {
+			display: none;
+		}
+	</style>
+</head>
+<body>
+	<main>
+		<h1>Using <code>aria-alertdialog</code> to Identify Errors</h1>
+		<p>This example shows how <code>role="alertdialog"</code> can be used to notify someone they have entered invalid information.</p>
+		<button command="show-modal" commandfor="date-alert" id="trigger-alertdialog" type="button">Trigger Alertdialog</button>
+	</main>
+	<dialog aria-labelledby="alert-heading" id="date-alert" role="alertdialog">
+		<h1 id="alert-heading">Error</h1>
+		<p>Employee's Birth Date is after their hire date. Please verify the birth date and hire date.</p>
+		<button command="close" commandfor="date-alert" type="button">Return to page and correct error</button>
+	</dialog>
+</body>
+</html>

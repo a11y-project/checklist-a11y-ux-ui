@@ -1,0 +1,64 @@
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Colour picker persistence | WCAG 2</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="style.css" rel="stylesheet">
+<?php
+// Get the foreground colour
+if (strlen($_COOKIE["forecolour"]) == 4)
+{
+	$strForecolour = $_COOKIE["forecolour"];
+}
+else
+{
+	$strForecolour = "#000";
+}
+
+// Get the background colour
+if (strlen($_COOKIE["backcolour"]) == 4)
+{
+	$strBackcolour = $_COOKIE["backcolour"];
+}
+else
+{
+	$strBackcolour = "#FFF";
+}
+
+// Set style block
+echo "\t<style type=\"text/css\">body, legend, a{ color: " . htmlspecialchars($strForecolour) . "; background: " . htmlspecialchars($strBackcolour) . ";}</style>\n";
+?>
+</head>
+<body>
+<h1>Colour picker persistence</h1>
+<p>
+Cookies are set with JavaScript when the colour picker is used, and then used to persist the styles on other pages. If JavaScript isn't available, the server-side colour picker would set the cookies. The following is an example of how the <code>style</code> element could be written into the <code>head</code> on the fly with PHP, but the principle is the same for all server-side languages.
+</p>
+<pre><code>&lt;?php
+if (isset($_COOKIE["forecolour"]) &amp;&amp; strlen($_COOKIE["forecolour"]) == 4)
+{
+    $strForecolour = $_COOKIE["forecolour"];
+}
+else
+{
+    $strForecolour = "#000";
+}
+
+if (isset($_COOKIE["backcolour"]) &amp;&amp; strlen($_COOKIE["backcolour"]) == 4)
+{
+    $strBackcolour = $_COOKIE["backcolour"];
+}
+else
+{
+    $strBackcolour = "#FFF";
+}
+
+echo "\t&lt;style type=\"text/css\"&gt;body, legend, a{ color: " . htmlspecialchars($strForecolour) . "; background: " . htmlspecialchars($strBackcolour) . ";}&lt;/style&gt;\n";
+?&gt;</code></pre>
+<p>
+<a href="index.php">Back to the colour picker</a>.
+</p>
+
+</body>
+</html>

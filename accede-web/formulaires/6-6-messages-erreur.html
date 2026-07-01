@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>6.6. Prévoir des messages d'erreur explicites et des suggestions de correction — AcceDe Web</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<header>
+  <p class="source">AcceDe Web — 6. Formulaires</p>
+  <h1>6.6. Prévoir des messages d'erreur explicites et des suggestions de correction</h1>
+</header>
+<nav class="breadcrumb">
+  <a href="../index.html">Accueil</a><span>›</span>
+  <a href="index.html">Formulaires</a><span>›</span> 6.6
+</nav>
+
+<div class="regle">
+  Chaque formulaire susceptible de renvoyer des erreurs doit prévoir des messages d'erreur explicites et, si nécessaire, des suggestions de correction. À la seule lecture du message d'erreur, doivent être identifiables : le champ concerné, la cause de l'erreur, et des suggestions de correction pour les erreurs de format.
+</div>
+
+<h2>Exemples de messages d'erreur</h2>
+<table>
+  <thead><tr><th>Champ</th><th>Message d'erreur</th></tr></thead>
+  <tbody>
+    <tr><td>Votre nom</td><td>« Veuillez renseigner votre nom »</td></tr>
+    <tr><td>Votre courriel</td><td>« Veuillez respecter le format du courriel (exemple@domaine.fr) »</td></tr>
+  </tbody>
+</table>
+
+<div class="attention">Les messages d'erreur ne doivent pas disparaître automatiquement. Ils doivent disparaître seulement sur action manuelle (croix de fermeture, affichage d'une nouvelle page, nouvel envoi du formulaire, etc.).</div>
+
+<h2>Recommandations techniques complémentaires</h2>
+<ul>
+  <li>Les messages doivent être reliés au champ via <code>aria-describedby</code> ou placés dans la balise <code>label</code></li>
+  <li>Les erreurs affichées dynamiquement nécessitent le rôle <code>alert</code></li>
+</ul>
+
+<h2>Correspondance RGAA 4.1.2</h2>
+<p>Critère : <span class="rgaa-tag">11.11</span></p>
+
+<footer><p><a href="index.html">← Retour à Formulaires</a> — Source : <a href="https://www.accede-web.com/notices/fonctionnelle-graphique/formulaires/prevoir-des-messages-derreur-explicites-et-des-suggestions-de-correction/" target="_blank">accede-web.com</a></p></footer>
+</body>
+</html>
