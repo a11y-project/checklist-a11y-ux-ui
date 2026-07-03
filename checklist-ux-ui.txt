@@ -82,7 +82,7 @@ SOMMAIRE
 ================================================================================
 
 ────────────────────────────────────────────────────────────────────────────────
-2.1. Si le texte est agrandi jusqu'à 200 %, la mise en page l'absorbe sans perte de contenu ni de fonctionnalité : aucun chevauchement, aucune troncature, boutons et formulaires restent utilisables — les blocs sont donc dimensionnés en unités relatives (em, rem, %), jamais en pixels fixes.
+2.1. Une variante de maquette à 200 % de zoom texte doit être fournie pour les zones à risque (cartes, tableaux, boutons groupés), sans chevauchement ni troncature.
 ────────────────────────────────────────────────────────────────────────────────
 
 GHERKIN — MODÈLE À COMPLÉTER
@@ -94,7 +94,7 @@ GHERKIN — MODÈLE À COMPLÉTER
 
 
 ────────────────────────────────────────────────────────────────────────────────
-2.2. Si les espacements de texte sont augmentés (interligne ×1,5, paragraphes ×2, lettres +0,12em, mots +0,16em), la présentation les absorbe sans chevauchement ni perte de contenu — les gabarits sont testés avec ces valeurs agrandies pour repérer les débordements.
+2.2. Si les espacements de texte sont augmentés (interligne ×1,5, paragraphes ×2, lettres +0,12em, mots +0,16em), aucun chevauchement ni perte de contenu — le designer fournit une variante de maquette correspondante sur les zones à risque (libellés courts, boutons, étiquettes de formulaire).
 ────────────────────────────────────────────────────────────────────────────────
 
 GHERKIN — MODÈLE À COMPLÉTER
@@ -106,7 +106,7 @@ GHERKIN — MODÈLE À COMPLÉTER
 
 
 ────────────────────────────────────────────────────────────────────────────────
-2.3. Si l'écran est zoomé à 400 % ou mesure 320 px de large, tous les contenus restent accessibles sans défilement horizontal, en portrait comme en paysage — les maquettes sont conçues mobile-first, avec la version 320 px des éléments critiques explicitement prévue et testée.
+2.3. À 320 px de large (zoom 400 %), tous les contenus restent accessibles sans défilement horizontal, en portrait comme en paysage — le designer fournit une variante de maquette dédiée à cette configuration.
 ────────────────────────────────────────────────────────────────────────────────
 
 Exception : un tableau de données large peut nécessiter un défilement
@@ -124,7 +124,7 @@ GHERKIN — MODÈLE À COMPLÉTER
 
 
 ────────────────────────────────────────────────────────────────────────────────
-2.4. Si l'affichage passe en vue mobile ou responsive, tout contenu et toute fonctionnalité disponible en vue bureau reste accessible, même si sa présentation change — jamais masqué pour gagner de la place, ni visuellement ni pour les lecteurs d'écran.
+2.4. En vue mobile ou responsive, tout contenu et toute fonctionnalité de la vue bureau reste accessible — le designer fournit une variante de maquette mobile/responsive par écran, sans jamais rien masquer (visuellement ou pour les lecteurs d'écran).
 ────────────────────────────────────────────────────────────────────────────────
 
 GHERKIN — MODÈLE À COMPLÉTER
@@ -137,7 +137,7 @@ GHERKIN — MODÈLE À COMPLÉTER
 
 
 ────────────────────────────────────────────────────────────────────────────────
-2.5. Si l'écran change d'orientation (portrait ↔ paysage), tous les contenus et fonctionnalités restent disponibles et utilisables — sauf si l'orientation est indispensable à la fonction elle-même (ex. piano virtuel).
+2.5. Au changement d'orientation (portrait ↔ paysage), tous les contenus et fonctionnalités restent utilisables — le designer fournit une variante de maquette par orientation, sauf si l'orientation est indispensable à la fonction (ex. piano virtuel).
 ────────────────────────────────────────────────────────────────────────────────
 
 GHERKIN — MODÈLE À COMPLÉTER
