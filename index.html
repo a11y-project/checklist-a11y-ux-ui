@@ -557,6 +557,33 @@
     color: var(--text);
     resize: vertical;
   }
+  .report-figures-field { margin: 0 0 1rem; }
+  .report-figures-field[hidden] { display: none; }
+  .report-figures-legend {
+    font-weight: 600;
+    font-size: 0.92rem;
+    margin: 0 0 0.6em;
+  }
+  .report-figure-group {
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 0.7em 0.8em;
+    margin: 0 0 0.7em;
+  }
+  .report-figure-thumb {
+    display: block;
+    max-width: 100%;
+    max-height: 110px;
+    width: auto;
+    border-radius: 6px;
+    margin: 0 0 0.5em;
+    background: var(--bg-alt);
+  }
+  .report-figure-caption {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin: 0 0 0.6em;
+  }
   .report-actions {
     display: flex;
     gap: 0.6rem;
@@ -1548,9 +1575,9 @@ Alors elle dispose d'une alternative [version audio / question simple / bouton �
   var PROBLEM_OPTIONS = [
     'Recommandation non pertinente',
     'Recommandation mal formulée',
-    'Screenshot non pertinent',
-    'Screenshot non visible'
+    'Ce n’est pas de la responsabilité du design'
   ];
+  var FIGURE_PROBLEM_OPTIONS = ['Screenshot non pertinent', 'Screenshot non visible'];
 
   var overlay = document.createElement('div');
   overlay.className = 'report-overlay';
@@ -1570,6 +1597,10 @@ Alors elle dispose d'une alternative [version audio / question simple / bouton �
       '<p class="report-rule-name"></p>' +
       '<form class="report-form" novalidate>' +
         '<fieldset><legend>Que souhaitez-vous signaler ?</legend>' + checksHtml + '</fieldset>' +
+        '<div class="report-figures-field" hidden>' +
+          '<p class="report-figures-legend">Problème sur une ou plusieurs captures ?</p>' +
+          '<div class="report-figures-list"></div>' +
+        '</div>' +
         '<label class="report-autre-label" for="report-autre">Autre (facultatif)</label>' +
         '<textarea id="report-autre" name="autre" rows="3" placeholder="Précisez si besoin…"></textarea>' +
         '<div class="report-actions">' +
@@ -1590,8 +1621,11 @@ Alors elle dispose d'une alternative [version audio / question simple / bouton �
   var lastFocused = null;
   var currentRule = null;
 
+  var figuresField = overlay.querySelector('.report-figures-field');
+  var figuresList = overlay.querySelector('.report-figures-list');
+
   function focusableEls() {
-    return Array.prototype.slice.call(overlay.querySelectorAll('button, input, textarea'))
+    return Array.prototype.slice.call(overlay.querySelectorAll('button, input, textarea, select'))
       .filter(function (el) { return !el.disabled && el.offsetParent !== null; });
   }
 
@@ -1622,10 +1656,55 @@ Alors elle dispose d'une alternative [version audio / question simple / bouton �
     submitBtn.textContent = 'Envoyer';
   }
 
-  function openReport(ruleId, ruleTitle, triggerEl) {
+  function populateFigureChecks(article) {
+    var images = article ? Array.prototype.slice.call(article.querySelectorAll('.rule-figure img')) : [];
+    figuresList.innerHTML = '';
+    if (!images.length) {
+      figuresField.hidden = true;
+      return;
+    }
+    images.forEach(function (img, i) {
+      var label = img.alt ? img.alt.trim() : 'Capture ' + (i + 1);
+      var shortLabel = label.length > 100 ? label.slice(0, 100) + '…' : label;
+
+      var group = document.createElement('div');
+      group.className = 'report-figure-group';
+
+      var thumb = document.createElement('img');
+      thumb.className = 'report-figure-thumb';
+      thumb.src = img.currentSrc || img.getAttribute('src');
+      thumb.alt = '';
+      group.appendChild(thumb);
+
+      var caption = document.createElement('p');
+      caption.className = 'report-figure-caption';
+      caption.textContent = shortLabel;
+      group.appendChild(caption);
+
+      FIGURE_PROBLEM_OPTIONS.forEach(function (optLabel, j) {
+        var lab = document.createElement('label');
+        lab.className = 'report-check';
+        var input = document.createElement('input');
+        input.type = 'checkbox';
+        input.name = 'fig-problem';
+        input.value = optLabel;
+        input.id = 'report-fig-' + i + '-' + j;
+        input.setAttribute('data-figure-label', shortLabel);
+        lab.appendChild(input);
+        lab.appendChild(document.createTextNode(' ' + optLabel));
+        group.appendChild(lab);
+      });
+
+      figuresList.appendChild(group);
+    });
+    figuresField.hidden = false;
+  }
+
+  function openReport(ruleId, ruleTitle, article, triggerEl) {
     currentRule = { id: ruleId, title: ruleTitle };
     lastFocused = triggerEl || document.activeElement;
     resetForm();
+    populateFigureChecks(article);
     ruleNameEl.textContent = 'Règle concernée : ' + ruleTitle;
     overlay.hidden = false;
     document.body.classList.add('lightbox-open');
@@ -1650,9 +1729,21 @@ Alors elle dispose d'une alternative [version audio / question simple / bouton �
     e.preventDefault();
     var checked = Array.prototype.slice.call(form.querySelectorAll('input[name="probleme"]:checked'))
       .map(function (el) { return el.value; });
+    var figChecked = Array.prototype.slice.call(form.querySelectorAll('input[name="fig-problem"]:checked'));
     var autre = form.querySelector('#report-autre').value.trim();
 
-    if (!checked.length && !autre) {
+    var figByLabel = {};
+    var figOrder = [];
+    figChecked.forEach(function (el) {
+      var lbl = el.getAttribute('data-figure-label');
+      if (!figByLabel[lbl]) { figByLabel[lbl] = []; figOrder.push(lbl); }
+      figByLabel[lbl].push(el.value);
+    });
+    var figuresSummary = figOrder.map(function (lbl) {
+      return lbl + ' — ' + figByLabel[lbl].join(', ');
+    }).join(' | ');
+
+    if (!checked.length && !figChecked.length && !autre) {
       statusEl.textContent = 'Cochez au moins une case ou précisez le problème dans « Autre ».';
       statusEl.className = 'report-status is-error';
       return;
@@ -1664,7 +1755,8 @@ Alors elle dispose d'une alternative [version audio / question simple / bouton �
     payload.append('_captcha', 'false');
     payload.append('_url', 'https://a11y-project.github.io/checklist-a11y-ux-ui/');
     payload.append('Règle concernée', currentRule ? currentRule.title : '');
-    payload.append('Problèmes signalés', checked.length ? checked.join(', ') : '(aucun — voir Autre)');
+    payload.append('Problèmes signalés', checked.length ? checked.join(', ') : '(aucun)');
+    payload.append('Captures signalées', figuresSummary || '(aucune)');
     payload.append('Autre', autre || '(non renseigné)');
     payload.append('Page', window.location.href.split('#')[0] + '#' + (currentRule ? currentRule.id : ''));
 
@@ -1702,7 +1794,7 @@ Alors elle dispose d'une alternative [version audio / question simple / bouton �
     btn.type = 'button';
     btn.className = 'rule-report-btn';
     btn.innerHTML = '<span aria-hidden="true">🚩</span> Signaler un problème';
-    btn.addEventListener('click', function () { openReport(article.id, ruleTitle, btn); });
+    btn.addEventListener('click', function () { openReport(article.id, ruleTitle, article, btn); });
     article.appendChild(btn);
   });
 })();
