@@ -257,6 +257,20 @@
     height: auto;
     border-radius: 4px;
   }
+  .conformity-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3em;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    padding: 0.2em 0.6em;
+    border-radius: 999px;
+    margin: 0 0 0.5rem;
+  }
+  .conformity-badge-ok { background: var(--nouveau-bg); color: var(--nouveau-text); }
+  .conformity-badge-ko { background: var(--correctif-bg); color: var(--correctif-text); }
   .rule-body p { margin: 0.5em 0; }
   .rule-body ul { margin: 0.4em 0; padding-left: 1.4em; }
   .rule-body ul.notes { padding-left: 1.2em; }
@@ -1507,6 +1521,20 @@ Alors elle dispose d'une alternative [version audio / question simple / bouton �
   };
   window.addEventListener('scroll', toggleBackToTop, { passive: true });
   toggleBackToTop();
+})();
+
+(function () {
+  var re = /^\d+\s*—\s*(Non conforme|Conforme)\s*:/;
+  document.querySelectorAll('.rule-figure img').forEach(function (img) {
+    var m = img.alt.match(re);
+    if (!m) return;
+    var isNonConforme = m[1] === 'Non conforme';
+    var badge = document.createElement('span');
+    badge.className = 'conformity-badge ' + (isNonConforme ? 'conformity-badge-ko' : 'conformity-badge-ok');
+    badge.innerHTML = '<span aria-hidden="true">' + (isNonConforme ? '✕' : '✓') + '</span> ' + (isNonConforme ? 'Non conforme' : 'Conforme');
+    var figure = img.closest('.rule-figure') || img.parentNode;
+    figure.insertBefore(badge, figure.firstChild);
+  });
 })();
 
 (function () {
