@@ -171,13 +171,6 @@ EXEMPLES D'IMAGES DÉCORATIVES
 3.2. Les images et icônes informatives (véhiculant une information absente du texte environnant) sont annotées dans la maquette avec le texte alternatif proposé par le designer ou le rédacteur, pour qu'un développeur puisse les déclarer programmatiquement dans le code.
 ────────────────────────────────────────────────────────────────────────────────
 
-EXEMPLES D'IMAGES INFORMATIVES
-  • Icône de cadenas signalant un paiement sécurisé, sans texte à proximité → alt = "Paiement sécurisé"
-  • Photo d'un produit sur une fiche produit → alt décrivant le produit (couleur, matière, forme)
-  • Icône météo seule dans un tableau de prévisions → alt = "Ensoleillé"
-  • Graphique ou infographie de données → alt résumant les valeurs clés
-  • Capture d'écran illustrant une étape dans un tutoriel → alt décrivant ce qui est visible à l'écran
-
 
 
 ────────────────────────────────────────────────────────────────────────────────
