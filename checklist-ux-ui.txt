@@ -82,7 +82,7 @@ SOMMAIRE
 ================================================================================
 
 ────────────────────────────────────────────────────────────────────────────────
-2.1. Une variante de maquette à 200 % de zoom texte doit être fournie pour les zones à risque (cartes, tableaux, boutons groupés), sans chevauchement ni troncature.
+2.1. Une variante de maquette avec un zoom texte à 200 % est livrée en complément de chaque maquette standard, afin d'éviter tout risque de chevauchement, de troncature ou de contenu masqué.
 ────────────────────────────────────────────────────────────────────────────────
 
 GHERKIN — MODÈLE À COMPLÉTER
@@ -94,7 +94,7 @@ GHERKIN — MODÈLE À COMPLÉTER
 
 
 ────────────────────────────────────────────────────────────────────────────────
-2.2. Si les espacements de texte sont augmentés (interligne ×1,5, paragraphes ×2, lettres +0,12em, mots +0,16em), aucun chevauchement ni perte de contenu — le designer fournit une variante de maquette correspondante sur les zones à risque (libellés courts, boutons, étiquettes de formulaire).
+2.2. Une variante de maquette avec un espacement de texte renforcé (interligne ×1,5, paragraphes ×2, lettres +0,12em, mots +0,16em) est livrée en complément de chaque maquette standard, afin de garantir que l'interface reste lisible et stable malgré l'augmentation des espacements.
 ────────────────────────────────────────────────────────────────────────────────
 
 GHERKIN — MODÈLE À COMPLÉTER
@@ -106,7 +106,7 @@ GHERKIN — MODÈLE À COMPLÉTER
 
 
 ────────────────────────────────────────────────────────────────────────────────
-2.3. À 320 px de large (zoom 400 %), tous les contenus restent accessibles sans défilement horizontal, en portrait comme en paysage — le designer fournit une variante de maquette dédiée à cette configuration.
+2.3. Une variante de maquette à une largeur de 320 px, équivalente à un zoom 400 %, est livrée en complément de chaque maquette standard, afin de garantir le reflow sans défilement horizontal.
 ────────────────────────────────────────────────────────────────────────────────
 
 Exception : un tableau de données large peut nécessiter un défilement
@@ -124,7 +124,7 @@ GHERKIN — MODÈLE À COMPLÉTER
 
 
 ────────────────────────────────────────────────────────────────────────────────
-2.4. En vue mobile ou responsive, tout contenu et toute fonctionnalité de la vue bureau reste accessible — le designer fournit une variante de maquette mobile/responsive par écran, sans jamais rien masquer (visuellement ou pour les lecteurs d'écran).
+2.4. Une variante de maquette mobile responsive est livrée en complément de chaque maquette standard, afin de garantir que tous les contenus et fonctionnalités restent accessibles.
 ────────────────────────────────────────────────────────────────────────────────
 
 GHERKIN — MODÈLE À COMPLÉTER
@@ -137,7 +137,7 @@ GHERKIN — MODÈLE À COMPLÉTER
 
 
 ────────────────────────────────────────────────────────────────────────────────
-2.5. Au changement d'orientation (portrait ↔ paysage), tous les contenus et fonctionnalités restent utilisables — le designer fournit une variante de maquette par orientation, sauf si l'orientation est indispensable à la fonction (ex. piano virtuel).
+2.5. Une variante de maquette en orientation portrait et paysage est livrée en complément de chaque maquette standard, afin de valider le maintien de l'usage dans les deux orientations.
 ────────────────────────────────────────────────────────────────────────────────
 
 GHERKIN — MODÈLE À COMPLÉTER
