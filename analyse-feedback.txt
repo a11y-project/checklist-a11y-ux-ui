@@ -1,0 +1,80 @@
+Analyse du feedback (fedback.txt) et corrections apportées
+=============================================================
+
+1. Règle 4.1 — Liens distincts de la couleur seule
+-------------------------------------------------
+Remarque : le screenshot 026 (extrait sur la RQTH) ne montrait le lien
+que par un changement de couleur, sans soulignement, alors que la règle
+exige un signal visuel autre que la couleur seule (soulignement).
+
+Correction apportée (commit 27473f1) :
+- Ajout du soulignement manquant sur l'image 026.
+- Ajout d'un script qui détecte automatiquement le motif « NNN — Conforme : »
+  / « NNN — Non conforme : » dans le texte alternatif des figures et
+  injecte un badge visible (icône + texte) au-dessus de chaque image
+  concernée (site-wide), pour ne plus reposer uniquement sur l'alt text
+  (invisible) ou sur la couleur pour distinguer conforme/non conforme.
+
+2. Règle 8.1 — Intitulé visible pour chaque champ
+--------------------------------------------------
+Remarque : sans badge conforme/non-conforme visible sur les images,
+l'absence d'information peut induire en erreur sur l'exemple montré.
+
+Correction apportée (commit 97ff6cf) :
+- Les 14 captures « avant/après » qui combinaient un exemple conforme et
+  un exemple non-conforme dans une seule image ont été scindées en deux
+  figures distinctes, chacune recevant son propre badge ✓/✕ (au lieu de
+  dépendre d'une légende unique couvrant les deux états).
+- Alt text et texte de recherche (data-search) réécrits en conséquence
+  pour chaque moitié.
+- Regex de détection des badges élargie (^\d+[a-z]?...) pour accepter les
+  nouveaux identifiants de type « 010a »/« 010b ».
+- Anciennes images fusionnées, désormais inutilisées, supprimées.
+
+3. Règle 8.6 — Message d'erreur : icône + couleur + texte
+-----------------------------------------------------------
+Remarques :
+- Screenshot 063 : icône manquante devant les textes d'erreur (couleur +
+  texte seulement).
+- Screenshot 064 : la description indiquait des erreurs affichées à la
+  fois en liste récapitulative en haut ET sous chaque champ, mais l'image
+  ne montrait que la liste du haut, sans les messages sous les champs ni
+  les icônes.
+
+Correction apportée (commit 2061eda) :
+- Ajout d'une icône (triangle d'avertissement) devant chaque message
+  d'erreur sur les deux captures.
+- Reconstruction du screenshot 064 pour qu'il montre réellement la liste
+  récapitulative ET les deux messages sous les champs concernés, comme
+  décrit dans son propre alt text.
+
+4. Règle 9.3 — Taille de cible tactile
+-----------------------------------------
+Remarque : le seuil de 24 × 24 px CSS est la limite légale WCAG 2.2 AA,
+mais des composants dimensionnés pile à cette taille deviennent souvent
+trop exigus une fois réutilisés sur mobile/tactile, où 48 px est la
+recommandation d'usage.
+
+Correction apportée (commit 80e8a73) :
+- Seuil de la règle relevé directement de 24 px à 48 px (cible et rayon
+  d'espacement de l'exception), la checklist s'adressant à des
+  designers UX/UI et non à la seule conformité légale minimale.
+- Suppression du schéma comparatif officiel WCAG 24 px (image 077), ses
+  valeurs 20/24 px « succès/échec » entrant désormais en contradiction
+  avec le nouveau seuil de 48 px ; l'illustration générique
+  conforme/non-conforme (078a/078b) continue de couvrir le principe.
+
+Nettoyage annexe (commit 47d5149)
+----------------------------------
+Deux images orphelines jamais référencées dans index.html
+(006-contraste-01-fr-1.png et 007-contraste-02-fr-1.png) ont été
+supprimées lors d'une passe de vérification.
+
+Point non traité (prompt.txt)
+--------------------------------
+Le fichier prompt.txt liste 5 propositions de variantes de maquette à
+livrer systématiquement en complément de chaque maquette standard
+(zoom texte 200 %, espacement de texte renforcé, largeur 320 px/zoom
+400 %, version mobile responsive, orientations portrait/paysage). Ces
+points ne correspondent à aucune règle existante corrigée ci-dessus et
+n'ont pas encore été implémentés dans la checklist.
