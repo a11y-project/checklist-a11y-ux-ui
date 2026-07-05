@@ -734,88 +734,39 @@
 <section class="doc-section" id="section-2" aria-labelledby="section-2-h">
   <h2 id="section-2-h">2. ADAPTABILITÉ DE LA MISE EN PAGE </h2>
   
-  <article class="rule" id="r5" data-badge="none" data-search="2.1. une variante de maquette avec un zoom texte à 200 % est livrée en complément de chaque maquette standard, afin d&#x27;éviter tout risque de chevauchement, de troncature ou de contenu masqué.  gherkin — modèle à compléter
- scénario : consulter [nom de l&#x27;écran / du composant] avec un texte agrandi à 200 %
-étant donné [l&#x27;écran / le composant] affiché avec les paramètres de police du navigateur réglés à 200 %
-quand une personne consulte cette page
-alors tout le contenu et toutes les fonctionnalités restent visibles et utilisables, sans chevauchement ni texte tronqué
-(le designer précise l&#x27;écran ou le composant testé, en particulier les zones à risque : cartes, tableaux, boutons groupés)  pour tester : dans la barre d&#x27;outils du mode appareil de chrome devtools, le menu déroulant « 100 % » (à côté des dimensions) permet de régler le niveau de zoom — le monter à 200 % pour vérifier que le contenu reste lisible sans être coupé ni se chevaucher.">
+  <article class="rule" id="r5" data-badge="none" data-search="2.1. une variante de maquette avec un zoom texte à 200 % est livrée en complément de chaque maquette standard, afin d&#x27;éviter tout risque de chevauchement, de troncature ou de contenu masqué.  pour tester : dans la barre d&#x27;outils du mode appareil de chrome devtools, le menu déroulant « 100 % » (à côté des dimensions) permet de régler le niveau de zoom — le monter à 200 % pour vérifier que le contenu reste lisible sans être coupé ni se chevaucher.">
   <h3 class="rule-title">2.1. Une variante de maquette avec un zoom texte à 200 % est livrée en complément de chaque maquette standard, afin d'éviter tout risque de chevauchement, de troncature ou de contenu masqué. </h3>
-  <div class="rule-figures rule-figures-single"><div class="illustration-pair"><figure class="rule-figure"><img src="mockups/110-chrome-devtools-zoom-dimensions.png" alt="110 — Pour tester : dans la barre d&#x27;outils du mode Appareil de Chrome DevTools, le menu déroulant « 100 % » (à côté des dimensions) permet de régler le niveau de zoom — le monter à 200 % pour vérifier que le contenu reste lisible sans être coupé ni se chevaucher." loading="lazy"></figure><pre class="gherkin">Scénario : Consulter [nom de l'écran / du composant] avec un texte agrandi à 200 %
-Étant donné [l'écran / le composant] affiché avec les paramètres de police du navigateur réglés à 200 %
-Quand une personne consulte cette page
-Alors tout le contenu et toutes les fonctionnalités restent visibles et utilisables, sans chevauchement ni texte tronqué
-(le designer précise l'écran ou le composant testé, en particulier les zones à risque : cartes, tableaux, boutons groupés)</pre></div></div>
-  <div class="rule-body"><p class="block-label">GHERKIN — MODÈLE À COMPLÉTER</p>
-</div>
+  <div class="rule-figures rule-figures-single"><div class="illustration-pair"><figure class="rule-figure"><img src="mockups/110-chrome-devtools-zoom-dimensions.png" alt="110 — Pour tester : dans la barre d&#x27;outils du mode Appareil de Chrome DevTools, le menu déroulant « 100 % » (à côté des dimensions) permet de régler le niveau de zoom — le monter à 200 % pour vérifier que le contenu reste lisible sans être coupé ni se chevaucher." loading="lazy"></figure></div></div>
+  <div class="rule-body"></div>
   
   
   
-</article><article class="rule" id="r6" data-badge="none" data-search="2.2. une variante de maquette avec un espacement de texte renforcé (interligne ×1,5, paragraphes ×2, lettres +0,12em, mots +0,16em) est livrée en complément de chaque maquette standard, afin de garantir que l&#x27;interface reste lisible et stable malgré l&#x27;augmentation des espacements.  gherkin — modèle à compléter
- scénario : consulter [nom de l&#x27;écran / du composant] avec des espacements de texte augmentés
-étant donné [l&#x27;écran / le composant] affiché avec un interligne ×1,5, un espacement de paragraphe ×2, une justification de lettre +0,12em et de mot +0,16em
-quand une personne consulte cette page
-alors aucun texte n&#x27;est tronqué ni superposé à un autre élément
-(le designer précise l&#x27;écran ou le composant à risque : libellés courts sur fond de couleur, boutons, étiquettes de formulaire)  non conforme : lorsque l&#x27;espacement du texte est augmenté, le titre « technologists seeking input from groups and programs » s&#x27;étale sur plusieurs lignes et vient chevaucher visuellement le paragraphe qui le suit juste en dessous, rendant les deux blocs de texte illisibles à leur intersection. conforme : encadré de texte « this is an example of space-and-a-half text » où chaque ligne bénéficie d&#x27;un espacement d&#x27;une fois et demie la hauteur habituelle, restant parfaitement lisible et sans aucun chevauchement avec les lignes voisines.">
+</article><article class="rule" id="r6" data-badge="none" data-search="2.2. une variante de maquette avec un espacement de texte renforcé (interligne ×1,5, paragraphes ×2, lettres +0,12em, mots +0,16em) est livrée en complément de chaque maquette standard, afin de garantir que l&#x27;interface reste lisible et stable malgré l&#x27;augmentation des espacements.  non conforme : lorsque l&#x27;espacement du texte est augmenté, le titre « technologists seeking input from groups and programs » s&#x27;étale sur plusieurs lignes et vient chevaucher visuellement le paragraphe qui le suit juste en dessous, rendant les deux blocs de texte illisibles à leur intersection. conforme : encadré de texte « this is an example of space-and-a-half text » où chaque ligne bénéficie d&#x27;un espacement d&#x27;une fois et demie la hauteur habituelle, restant parfaitement lisible et sans aucun chevauchement avec les lignes voisines.">
   <h3 class="rule-title">2.2. Une variante de maquette avec un espacement de texte renforcé (interligne ×1,5, paragraphes ×2, lettres +0,12em, mots +0,16em) est livrée en complément de chaque maquette standard, afin de garantir que l'interface reste lisible et stable malgré l'augmentation des espacements. </h3>
-  <div class="rule-figures"><div class="illustration-pair"><figure class="rule-figure"><img src="mockups/012-spacing-overlap-fail.png" alt="012 — Non conforme : lorsque l&#x27;espacement du texte est augmenté, le titre « Technologists Seeking Input from Groups and Programs » s&#x27;étale sur plusieurs lignes et vient chevaucher visuellement le paragraphe qui le suit juste en dessous, rendant les deux blocs de texte illisibles à leur intersection." loading="lazy"></figure><pre class="gherkin">Scénario : Consulter [nom de l'écran / du composant] avec des espacements de texte augmentés
-Étant donné [l'écran / le composant] affiché avec un interligne ×1,5, un espacement de paragraphe ×2, une justification de lettre +0,12em et de mot +0,16em
-Quand une personne consulte cette page
-Alors aucun texte n'est tronqué ni superposé à un autre élément
-(le designer précise l'écran ou le composant à risque : libellés courts sur fond de couleur, boutons, étiquettes de formulaire)</pre></div><div class="illustration-pair"><figure class="rule-figure"><img src="mockups/013-space-and-a-half.gif" alt="013 — Conforme : encadré de texte « This is an example of space-and-a-half text » où chaque ligne bénéficie d&#x27;un espacement d&#x27;une fois et demie la hauteur habituelle, restant parfaitement lisible et sans aucun chevauchement avec les lignes voisines." loading="lazy"></figure></div></div>
-  <div class="rule-body"><p class="block-label">GHERKIN — MODÈLE À COMPLÉTER</p>
-</div>
+  <div class="rule-figures"><div class="illustration-pair"><figure class="rule-figure"><img src="mockups/012-spacing-overlap-fail.png" alt="012 — Non conforme : lorsque l&#x27;espacement du texte est augmenté, le titre « Technologists Seeking Input from Groups and Programs » s&#x27;étale sur plusieurs lignes et vient chevaucher visuellement le paragraphe qui le suit juste en dessous, rendant les deux blocs de texte illisibles à leur intersection." loading="lazy"></figure></div><div class="illustration-pair"><figure class="rule-figure"><img src="mockups/013-space-and-a-half.gif" alt="013 — Conforme : encadré de texte « This is an example of space-and-a-half text » où chaque ligne bénéficie d&#x27;un espacement d&#x27;une fois et demie la hauteur habituelle, restant parfaitement lisible et sans aucun chevauchement avec les lignes voisines." loading="lazy"></figure></div></div>
+  <div class="rule-body"></div>
   
   
   
-</article><article class="rule" id="r7" data-badge="none" data-search="2.3. une variante de maquette à une largeur de 320 px, équivalente à un zoom 400 %, est livrée en complément de chaque maquette standard, afin de garantir le reflow sans défilement horizontal.  exception : un tableau de données large peut nécessiter un défilement horizontal dédié — prévoir dans ce cas une indication visuelle et un moyen de scroll.
- gherkin — modèle à compléter
- scénario : consulter [nom de l&#x27;écran] sur une largeur de 320 px
-étant donné [l&#x27;écran] affiché sur un viewport de 320 px de large (zoom 400 %), en orientation [portrait/paysage]
-quand une personne consulte cette page
-alors tout le contenu reste accessible sans défilement horizontal
-(à répéter pour un tableau de données large : préciser alors le moyen de défilement horizontal dédié et son indication visuelle)  pour tester : dans chrome devtools en mode responsive, les poignées de redimensionnement (encadrées en bleu) permettent de réduire manuellement la largeur de la fenêtre jusqu&#x27;à 320 px pour vérifier que tout le contenu reste accessible sans défilement horizontal.">
+</article><article class="rule" id="r7" data-badge="none" data-search="2.3. une variante de maquette à une largeur de 320 px, équivalente à un zoom 400 %, est livrée en complément de chaque maquette standard, afin de garantir le reflow sans défilement horizontal.  exception : un tableau de données large peut nécessiter un défilement horizontal dédié — prévoir dans ce cas une indication visuelle et un moyen de scroll.  pour tester : dans chrome devtools en mode responsive, les poignées de redimensionnement (encadrées en bleu) permettent de réduire manuellement la largeur de la fenêtre jusqu&#x27;à 320 px pour vérifier que tout le contenu reste accessible sans défilement horizontal.">
   <h3 class="rule-title">2.3. Une variante de maquette à une largeur de 320 px, équivalente à un zoom 400 %, est livrée en complément de chaque maquette standard, afin de garantir le reflow sans défilement horizontal. </h3>
-  <div class="rule-figures rule-figures-single"><div class="illustration-pair"><figure class="rule-figure"><img src="mockups/111-chrome-devtools-resize-handles-reflow.png" alt="111 — Pour tester : dans Chrome DevTools en mode Responsive, les poignées de redimensionnement (encadrées en bleu) permettent de réduire manuellement la largeur de la fenêtre jusqu&#x27;à 320 px pour vérifier que tout le contenu reste accessible sans défilement horizontal." loading="lazy"></figure><pre class="gherkin">Scénario : Consulter [nom de l'écran] sur une largeur de 320 px
-Étant donné [l'écran] affiché sur un viewport de 320 px de large (zoom 400 %), en orientation [portrait/paysage]
-Quand une personne consulte cette page
-Alors tout le contenu reste accessible sans défilement horizontal
-(à répéter pour un tableau de données large : préciser alors le moyen de défilement horizontal dédié et son indication visuelle)</pre></div></div>
+  <div class="rule-figures rule-figures-single"><div class="illustration-pair"><figure class="rule-figure"><img src="mockups/111-chrome-devtools-resize-handles-reflow.png" alt="111 — Pour tester : dans Chrome DevTools en mode Responsive, les poignées de redimensionnement (encadrées en bleu) permettent de réduire manuellement la largeur de la fenêtre jusqu&#x27;à 320 px pour vérifier que tout le contenu reste accessible sans défilement horizontal." loading="lazy"></figure></div></div>
   <div class="rule-body"><p>Exception : un tableau de données large peut nécessiter un défilement horizontal dédié — prévoir dans ce cas une indication visuelle et un moyen de scroll.</p>
-<p class="block-label">GHERKIN — MODÈLE À COMPLÉTER</p>
 </div>
   
   
   <p class="rule-resource"><a href="https://www.accede-web.com/notices/fonctionnelle-graphique/orientation-et-taille-decran/concevoir-linterface-de-maniere-responsive/" target="_blank" rel="noopener noreferrer">Notice AcceDeWeb – Toujours concevoir l'interface de manière responsive</a></p>
-</article><article class="rule" id="r8" data-badge="none" data-search="2.4. une variante de maquette mobile responsive est livrée en complément de chaque maquette standard, afin de garantir que tous les contenus et fonctionnalités restent accessibles.  gherkin — modèle à compléter
- scénario : retrouver [fonctionnalité / contenu] en vue mobile
-étant donné [fonctionnalité ou contenu] disponible sur la version bureau de [nom de l&#x27;écran]
-quand une personne consulte la version mobile ou responsive de cet écran
-alors elle retrouve la même fonctionnalité ou le même contenu, y compris via un lecteur d&#x27;écran, même si sa présentation a changé  pour tester : dans chrome devtools, le mode appareil ouvre une liste déroulante de gabarits (iphone se, iphone 12 pro, pixel 5, samsung galaxy, ipad…) permettant de vérifier successivement, sur chaque taille d&#x27;écran, qu&#x27;aucun contenu ni fonctionnalité visible en bureau ne disparaît.">
+</article><article class="rule" id="r8" data-badge="none" data-search="2.4. une variante de maquette mobile responsive est livrée en complément de chaque maquette standard, afin de garantir que tous les contenus et fonctionnalités restent accessibles.  pour tester : dans chrome devtools, le mode appareil ouvre une liste déroulante de gabarits (iphone se, iphone 12 pro, pixel 5, samsung galaxy, ipad…) permettant de vérifier successivement, sur chaque taille d&#x27;écran, qu&#x27;aucun contenu ni fonctionnalité visible en bureau ne disparaît.">
   <h3 class="rule-title">2.4. Une variante de maquette mobile responsive est livrée en complément de chaque maquette standard, afin de garantir que tous les contenus et fonctionnalités restent accessibles. </h3>
-  <div class="rule-figures rule-figures-single"><div class="illustration-pair"><figure class="rule-figure"><img src="mockups/112-chrome-devtools-device-list.png" alt="112 — Pour tester : dans Chrome DevTools, le mode Appareil ouvre une liste déroulante de gabarits (iPhone SE, iPhone 12 Pro, Pixel 5, Samsung Galaxy, iPad…) permettant de vérifier successivement, sur chaque taille d&#x27;écran, qu&#x27;aucun contenu ni fonctionnalité visible en bureau ne disparaît." loading="lazy"></figure><pre class="gherkin">Scénario : Retrouver [fonctionnalité / contenu] en vue mobile
-Étant donné [fonctionnalité ou contenu] disponible sur la version bureau de [nom de l'écran]
-Quand une personne consulte la version mobile ou responsive de cet écran
-Alors elle retrouve la même fonctionnalité ou le même contenu, y compris via un lecteur d'écran, même si sa présentation a changé</pre></div></div>
-  <div class="rule-body"><p class="block-label">GHERKIN — MODÈLE À COMPLÉTER</p>
-</div>
+  <div class="rule-figures rule-figures-single"><div class="illustration-pair"><figure class="rule-figure"><img src="mockups/112-chrome-devtools-device-list.png" alt="112 — Pour tester : dans Chrome DevTools, le mode Appareil ouvre une liste déroulante de gabarits (iPhone SE, iPhone 12 Pro, Pixel 5, Samsung Galaxy, iPad…) permettant de vérifier successivement, sur chaque taille d&#x27;écran, qu&#x27;aucun contenu ni fonctionnalité visible en bureau ne disparaît." loading="lazy"></figure></div></div>
+  <div class="rule-body"></div>
   
   
   <p class="rule-resource"><a href="https://www.accede-web.com/notices/fonctionnelle-graphique/orientation-et-taille-decran/ne-pas-supprimer-de-fonctionnalites-ou-de-contenus-en-vues-responsive/" target="_blank" rel="noopener noreferrer">Notice AcceDeWeb – Ne pas supprimer de fonctionnalités ou de contenus en vues responsive</a></p>
-</article><article class="rule" id="r9" data-badge="none" data-search="2.5. une variante de maquette en orientation portrait et paysage est livrée en complément de chaque maquette standard, afin de valider le maintien de l&#x27;usage dans les deux orientations.  gherkin — modèle à compléter
- scénario : utiliser [nom de l&#x27;écran] après un changement d&#x27;orientation
-étant donné [l&#x27;écran] affiché en orientation portrait
-quand une personne fait pivoter son appareil en paysage (ou inversement)
-alors tous les contenus et fonctionnalités restent disponibles et utilisables
-(sauf si l&#x27;orientation portrait ou paysage est indispensable à la fonction elle-même — le préciser explicitement si c&#x27;est le cas)  pour tester : dans chrome devtools, le bouton pivoter (encadré en bleu, à côté de la liste des appareils) fait basculer instantanément l&#x27;aperçu entre portrait et paysage, pour vérifier que l&#x27;interface reste utilisable dans les deux orientations.">
+</article><article class="rule" id="r9" data-badge="none" data-search="2.5. une variante de maquette en orientation portrait et paysage est livrée en complément de chaque maquette standard, afin de valider le maintien de l&#x27;usage dans les deux orientations.  pour tester : dans chrome devtools, le bouton pivoter (encadré en bleu, à côté de la liste des appareils) fait basculer instantanément l&#x27;aperçu entre portrait et paysage, pour vérifier que l&#x27;interface reste utilisable dans les deux orientations.">
   <h3 class="rule-title">2.5. Une variante de maquette en orientation portrait et paysage est livrée en complément de chaque maquette standard, afin de valider le maintien de l'usage dans les deux orientations. </h3>
-  <div class="rule-figures rule-figures-single"><div class="illustration-pair"><figure class="rule-figure"><img src="mockups/113-chrome-devtools-rotate-button.png" alt="113 — Pour tester : dans Chrome DevTools, le bouton pivoter (encadré en bleu, à côté de la liste des appareils) fait basculer instantanément l&#x27;aperçu entre portrait et paysage, pour vérifier que l&#x27;interface reste utilisable dans les deux orientations." loading="lazy"></figure><pre class="gherkin">Scénario : Utiliser [nom de l'écran] après un changement d'orientation
-Étant donné [l'écran] affiché en orientation portrait
-Quand une personne fait pivoter son appareil en paysage (ou inversement)
-Alors tous les contenus et fonctionnalités restent disponibles et utilisables
-(sauf si l'orientation portrait ou paysage est indispensable à la fonction elle-même — le préciser explicitement si c'est le cas)</pre></div></div>
-  <div class="rule-body"><p class="block-label">GHERKIN — MODÈLE À COMPLÉTER</p>
-</div>
+  <div class="rule-figures rule-figures-single"><div class="illustration-pair"><figure class="rule-figure"><img src="mockups/113-chrome-devtools-rotate-button.png" alt="113 — Pour tester : dans Chrome DevTools, le bouton pivoter (encadré en bleu, à côté de la liste des appareils) fait basculer instantanément l&#x27;aperçu entre portrait et paysage, pour vérifier que l&#x27;interface reste utilisable dans les deux orientations." loading="lazy"></figure></div></div>
+  <div class="rule-body"></div>
   
   
   <p class="rule-resource"><a href="https://www.accede-web.com/notices/fonctionnelle-graphique/regles-supplementaires-pour-la-conformite/ne-pas-brider-la-possibilite-de-changer-lorientation-de-laffichage/" target="_blank" rel="noopener noreferrer">Notice AcceDeWeb – Ne pas brider la possibilité de changer l'orientation de l'affichage</a></p>
