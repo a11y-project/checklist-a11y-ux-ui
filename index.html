@@ -945,15 +945,21 @@ Alors le contenu supplémentaire reste affiché tant que le pointeur ou le focus
   
   
   
-</article><article class="rule" id="r25" data-badge="none" data-search="6.4. chaque tâche est réalisable au clavier avec des interactions prévisibles s&#x27;appuyant sur les modèles natifs ; la prise de focus seule ne déclenche jamais un changement de contexte important, et la modification d&#x27;un réglage a un effet prévisible, ou la personne en est prévenue au préalable.  gherkin — modèle à compléter 
-">
+</article><article class="rule" id="r25" data-badge="none" data-search="6.4. chaque tâche est réalisable au clavier avec des interactions prévisibles s&#x27;appuyant sur les modèles natifs ; la prise de focus seule ne déclenche jamais un changement de contexte important, et la modification d&#x27;un réglage a un effet prévisible, ou la personne en est prévenue au préalable.  gherkin — modèle à compléter
+ scénario : réaliser [nom de la tâche] au clavier
+étant donné [nom de l&#x27;écran ou du composant] permettant de [action]
+quand une personne réalise cette action uniquement au clavier
+alors elle y parvient sans piège au clavier, et la seule prise de focus ne déclenche jamais [changement de contexte, ex. soumission, navigation, ouverture de fenêtre]  non conforme : un menu déroulant « pays » change la page de livraison dès qu&#x27;une option est sélectionnée au clavier, sans validation explicite. conforme : le même menu déroulant est accompagné d&#x27;un bouton « valider » ; la page ne change qu&#x27;après son activation explicite.">
   <h3 class="rule-title">6.4. Chaque tâche est réalisable au clavier avec des interactions prévisibles s'appuyant sur les modèles natifs ; la prise de focus seule ne déclenche jamais un changement de contexte important, et la modification d'un réglage a un effet prévisible, ou la personne en est prévenue au préalable. </h3>
-  
+  <div class="rule-figures"><div class="illustration-pair"><figure class="rule-figure"><img src="mockups/131a-changement-contexte-imprevisible.png" alt="131a — Non conforme : un menu déroulant « Pays » change la page de livraison dès qu&#x27;une option est sélectionnée au clavier, sans validation explicite — la simple prise de focus/sélection déclenche un changement de contexte imprévisible." loading="lazy"></figure></div><div class="illustration-pair"><figure class="rule-figure"><img src="mockups/131b-changement-contexte-previsible.png" alt="131b — Conforme : le même menu déroulant « Pays » est accompagné d&#x27;un bouton « Valider » ; la page ne change qu&#x27;après son activation explicite (Entrée ou clic), rendant l&#x27;effet du réglage prévisible." loading="lazy"></figure></div></div>
   <div class="rule-body"><p class="block-label">GHERKIN — MODÈLE À COMPLÉTER</p>
-</div>
-  
-  
-  
+<pre class="gherkin">Scénario : Réaliser [nom de la tâche] au clavier
+Étant donné [nom de l'écran ou du composant] permettant de [action]
+Quand une personne réalise cette action uniquement au clavier
+Alors elle y parvient sans piège au clavier, et la seule prise de focus ne déclenche jamais [changement de contexte, ex. soumission, navigation, ouverture de fenêtre]</pre></div>
+
+
+
 </article><article class="rule" id="r26" data-badge="none" data-search="6.5. un raccourci clavier à une seule touche peut être désactivé ou remplacé par une combinaison multi-touches — sauf s&#x27;il n&#x27;agit que lorsqu&#x27;un composant précis a le focus (ex. flèche bas ouvrant une liste déroulante) ; les autres raccourcis combinent toujours une touche de modification (alt, contrôle…).  gherkin — modèle à compléter 
  scénario : utiliser le raccourci [touche] sur [nom de l&#x27;écran]
 étant donné [nom de l&#x27;écran] proposant le raccourci clavier à une seule touche [touche] pour [action]
