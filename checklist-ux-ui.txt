@@ -625,6 +625,21 @@ GHERKIN — MODÈLE À COMPLÉTER
   Ressource : Prévoir un moyen pour contrôler les sons déclenchés automatiquement | https://www.accede-web.com/notices/fonctionnelle-graphique/regles-supplementaires-pour-la-conformite/prevoir-un-moyen-pour-controler-les-sons-declenches-automatiquement/
 
 
+────────────────────────────────────────────────────────────────────────────────
+11.5. Un bouton dédié permet d'activer et de désactiver l'audiodescription directement depuis la barre de contrôle du lecteur, au même niveau de visibilité que le bouton Lecture/Pause — jamais uniquement accessible depuis un sous-menu de réglages.
+────────────────────────────────────────────────────────────────────────────────
+
+
+────────────────────────────────────────────────────────────────────────────────
+11.6. Un bouton dédié permet d'activer et de désactiver les sous-titres directement depuis la barre de contrôle du lecteur, au même niveau de visibilité que le bouton Lecture/Pause — jamais uniquement accessible depuis un sous-menu de réglages.
+────────────────────────────────────────────────────────────────────────────────
+
+
+────────────────────────────────────────────────────────────────────────────────
+11.7. Les sous-titres peuvent être personnalisés par la personne qui les utilise (taille, couleur, police, fond, position), pour rester lisibles quel que soit le contenu affiché derrière.
+────────────────────────────────────────────────────────────────────────────────
+
+
 ================================================================================
 12. TEMPS, DÉLAIS ET INTERRUPTIONS
 ================================================================================
