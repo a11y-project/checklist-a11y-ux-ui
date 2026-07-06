@@ -158,14 +158,6 @@ GHERKIN — MODÈLE À COMPLÉTER
 3.1. Les images et icônes purement décoratives (n'ajoutant aucune information à ce que le texte exprime déjà) sont annotées comme telles dans la maquette, pour qu'un développeur puisse les déclarer programmatiquement comme telles dans le code.
 ────────────────────────────────────────────────────────────────────────────────
 
-EXEMPLES D'IMAGES DÉCORATIVES
-  • Photo de paysage en fond d'un bandeau dont le texte porte déjà le message
-  • Séparateur graphique entre deux sections (ligne, vague, motif)
-  • Icône illustrative à côté d'un titre déjà explicite (ex. ampoule à côté de « Nos idées »)
-  • Photo d'ambiance en complément d'une vraie photo produit déjà décrite ailleurs
-  • Pictogramme redondant avec un texte de bouton déjà visible (ex. flèche à côté de « Suivant »)
-
-
 
 ────────────────────────────────────────────────────────────────────────────────
 3.2. Les images et icônes informatives (véhiculant une information absente du texte environnant) sont annotées dans la maquette avec le texte alternatif proposé par le designer ou le rédacteur, pour qu'un développeur puisse les déclarer programmatiquement dans le code.
